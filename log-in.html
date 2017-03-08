@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>See You There</title>
+	<meta charset="utf-8">
+
+	<!-- JQuery Link -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">></script>
+
+	<!-- Local JavaScript Link -->
+	<script type="text/javascript" src="assets/javascript/app.js" ></script>
+	
+	<!-- Reset CSS Link -->
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
+    <!-- Bootstrap Link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	
+	<!-- Firebase link -->
+	<script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+
+    <!-- Local CSS Link -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+
+</body>
+
+	<div class="container">
+		<div>
+			<form id="log-in-form" enctype="text/plain" action="">
+				<div class="row">
+					<label class="email-label" id="email-label">Email:</label><br>
+					<input type="text" value="" name="email" placeholder="Person123" class="input" id="email-input"><br>
+				 </div>
+				 <div class="row">
+					<label class="password-label" id="password-label">Password:</label><br>
+					<input type="text" value="" name="password" placeholder="password#1" class="box" id="password-input"><br>
+				</div>
+			</form>
+			<div>
+				<button class="btn btn-primary btn-log-in" id="btn-log-in">Log-In</button>
+			</div>
+			<div>
+				<button class="btn btn-default btn-new" id="btn-new">New User</button>
+			</div>
+		</div>
+		<div>
+			<form id="new-user-form" enctype="text/plain" action="">
+				<div class="row">
+					<label class="new-email-label" id="new-email-label">Email:</label><br>
+					<input type="text" value="" name="new-email" placeholder="Person123" class="new-input" id="new-email-input"><br>
+				 </div>
+				 <div class="row">
+					<label class="new-password-label" id="new-password-label">Password:</label><br>
+					<input type="text" value="" name="new-password" placeholder="password#1" class="box" id="new-password-input"><br>
+				</div>
+			</form>
+			<div>
+				<button class="btn btn-success btn-create" id="btn-create">Create</button>
+			</div>
+		</div>
+	</div>
+
+
+</html>
