@@ -8,31 +8,31 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">></script>
 
 	<!-- Local JavaScript Link -->
-	<script type="text/javascript" src="assets/javascript/app.js" ></script>
+	<script type="text/javascript" src="public/assets/javascript/app.js" ></script>
 	
 	<!-- Reset CSS Link -->
-	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="public/assets/css/reset.css">
 
     <!-- Bootstrap Link -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	
 	<!-- Firebase link -->
-	<script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
 
     <!-- Local CSS Link -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="public/assets/css/style.css">
 </head>
 
 <body>
 
 </body>
 
-	<div class="container">
+	<div class="container" id="log-in-cont">
 		<div>
 			<form id="log-in-form" enctype="text/plain" action="">
 				<div class="row">
 					<label class="email-label" id="email-label">Email:</label><br>
-					<input type="text" value="" name="email" placeholder="Person123" class="input" id="email-input"><br>
+					<input type="text" value="" name="email" placeholder="Bob@Example.com" class="input" id="email-input"><br>
 				 </div>
 				 <div class="row">
 					<label class="password-label" id="password-label">Password:</label><br>
@@ -40,25 +40,112 @@
 				</div>
 			</form>
 			<div>
-				<button class="btn btn-primary btn-log-in" id="btn-log-in">Log-In</button>
+				<button class="btn btn-primary btnLogIn" id="btnLogIn">Log In</button>
 			</div>
 			<div>
-				<button class="btn btn-default btn-new" id="btn-new">New User</button>
+				<button class="btn btn-default btnSignUp" id="btnRegister">Register</button>
+			</div>
+
+			<div class="hide register-div" id="register-div">
+				<form class= id="register-form" enctype="text/plain" action="">
+					<div class="row">
+						<label class="email-label" id="email-label">Email:</label><br>
+						<input type="text" value="" name="email" placeholder="Bob@Example.com" class="input" id="new-email-input"><br>
+					 </div>
+					 <div class="row">
+						<label class="password-label" id="password-label">Password:</label><br>
+						<input type="text" value="" name="password" placeholder="password#1" class="box" id="new-password-input"><br>
+					</div>
+				</form>
+				<div>
+					<button class="btn btn-success btnSignUp" id="btnSignUp">Sign Up</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div>
+		<button class="btn btn-default btnLogOut hide" id="btnLogOut">Log Out</button>
+	</div>
+
+	
+	<div class="container hide" id="main-cont">
+		<div class="row row-title">
+			<h1>See You There!</h1>
+		</div>
+
+		<div class="row row-select">
+			<div class="col col-lg-6">
+				<div class="row">
+					<h3>When?</h3>
+				</div>
+				<div class="row">
+					<h3>Where?</h3>
+				</div>
+			</div>
+			<div class="col col-lg-6">
+				<div class="row">
+					<h3>Who?</h3>
+				</div>
+				<div class="row">
+					<h3>What?</h3>
+				</div>
 			</div>
 		</div>
-		<div>
-			<form id="new-user-form" enctype="text/plain" action="">
-				<div class="row">
-					<label class="new-email-label" id="new-email-label">Email:</label><br>
-					<input type="text" value="" name="new-email" placeholder="Person123" class="new-input" id="new-email-input"><br>
-				 </div>
-				 <div class="row">
-					<label class="new-password-label" id="new-password-label">Password:</label><br>
-					<input type="text" value="" name="new-password" placeholder="password#1" class="box" id="new-password-input"><br>
-				</div>
-			</form>
+
+		<div class="row row-go">
 			<div>
-				<button class="btn btn-success btn-create" id="btn-create">Create</button>
+				<button>Go</button>
+			</div>
+		</div>
+
+		<div class="row row-all-options">
+			<div class="col-lg-12 col-options">
+				<div class="row row-title-options">
+					<div class="col-md-4">
+						<h3>When Options:</h3>
+					</div>
+					<div class="col-md-4">
+						<h3>Where Options:</h3>
+					</div>
+					<div class="col-md-4">
+						<h3>What Options:</h3>
+					</div>
+				</div>
+				<div class="row row-options">
+					<div class="col-md-4">
+						<p>When Options 1</p>
+					</div>
+					<div class="col-md-4">
+						<p>Where Options 1</p>
+					</div>
+					<div class="col-md-4">
+						<p>What Options 1</p>
+					</div>
+				</div>
+				<div class="row row-options">
+					<div class="col-md-4">
+						<p>When Options 2</p>
+					</div>
+					<div class="col-md-4">
+						<p>Where Options 2</p>
+					</div>
+					<div class="col-md-4">
+						<p>What Options 2</p>
+					</div>
+				</div>
+				<div class="row row-options">
+					<div class="col-md-4">
+						<p>When Options 3</p>
+					</div>
+					<div class="col-md-4">
+						<p>Where Options 3</p>
+					</div>
+					<div class="col-md-4">
+						<p>What Options 3</p>
+					</div>
+				</div>
+				
 			</div>
 		</div>
 	</div>
