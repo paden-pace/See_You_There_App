@@ -29,25 +29,34 @@
 
 	<div class="container" id="log-in-cont">
 		<div>
-			<form id="log-in-form" enctype="text/plain" action="">
-				<div class="row">
-					<label class="email-label" id="email-label">Email:</label><br>
-					<input type="text" value="" name="email" placeholder="Bob@Example.com" class="input" id="email-input"><br>
-				 </div>
-				 <div class="row">
-					<label class="password-label" id="password-label">Password:</label><br>
-					<input type="text" value="" name="password" placeholder="password#1" class="box" id="password-input"><br>
+			<div class="log-in-div" id="log-in-div">
+				<form id="log-in-form" enctype="text/plain" action="">
+					<div class="row">
+						<label class="email-label" id="email-label">Email:</label><br>
+						<input type="text" value="" name="email" placeholder="Bob@Example.com" class="input" id="email-input"><br>
+					 </div>
+					 <div class="row">
+						<label class="password-label" id="password-label">Password:</label><br>
+						<input type="text" value="" name="password" placeholder="password#1" class="box" id="password-input"><br>
+					</div>
+				</form>
+				<div>
+					<button class="btn btn-primary btnLogIn" id="btnLogIn">Log In</button>
 				</div>
-			</form>
-			<div>
-				<button class="btn btn-primary btnLogIn" id="btnLogIn">Log In</button>
+				<div>
+					<button class="btn btn-default btnSignUp" id="btnRegister">Register</button>
+				</div>
 			</div>
-			<div>
-				<button class="btn btn-default btnSignUp" id="btnRegister">Register</button>
-			</div>
-
 			<div class="hide register-div" id="register-div">
 				<form class= id="register-form" enctype="text/plain" action="">
+					<div class="row">
+						<label class="first-name-label" id="first-name-label">First Name:</label><br>
+						<input type="text" value="" name="first-name" placeholder="Bob" class="input" id="new-first-name-input"><br>
+					 </div>
+					 <div class="row">
+						<label class="last-name-label" id="last-name-label">Last Name:</label><br>
+						<input type="text" value="" name="last-name" placeholder="Smith" class="input" id="new-last-name-input"><br>
+					 </div>
 					<div class="row">
 						<label class="email-label" id="email-label">Email:</label><br>
 						<input type="text" value="" name="email" placeholder="Bob@Example.com" class="input" id="new-email-input"><br>
@@ -92,6 +101,44 @@
 			</div>
 			<div class="col col-lg-4" id="who">
 				<h3>Who?</h3>
+				<div class="contact-div" id="contact-div">
+					<form class= id="contact-form" enctype="text/plain" action="">
+						<div class="row">
+							<label class="first-name-cont-label" id="first-name-cont-label">First Name:</label><br>
+							<input type="text" value="" name="first-name-cont" placeholder="Bob" class="input" id="first-name-cont-input"><br>
+						</div>
+						<div class="row">
+							<label class="last-name-cont-label" id="last-name-cont-label">Last Name:</label><br>
+							<input type="text" value="" name="last-name-cont" placeholder="Smith" class="input" id="last-name-cont-input"><br>
+							</div>
+						<div class="row">
+							<label class="email-cont-label" id="email-cont-label">Email:</label><br>
+							<input type="text" value="" name="email" placeholder="Bob@Example.com" class="input" id="email-cont-input"><br>
+						</div>
+						<div class="row">
+							<label class="phone-cont-label" id="phone-cont-label">Phone:</label><br>
+							<input type="text" value="" name="phone" placeholder="512-555-1234" class="input" id="phone-cont-input"><br>
+						</div>
+					</form>
+					<div>
+						<button class="btn btn-success btnNewCont" id="btnNewCont">Create</button>
+					</div>
+				</div>
+				<div class="exContactBox exContactBox" id="exContactBox">	
+					<div class="row exContactTitle" id="exContactTitle">
+						<h3>Contact List</h3>
+					</div>
+					<div class="row exContactForm" id="exContactForm">
+						<table class='table exContactTable' id="exContactTable">
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Email</th>
+							<th>Phone</th>
+							<tbody class="tbody exContactTbody" id="exContactTbody">
+							</tbody>
+						</table>
+					</div>
+				</div>
 			</div>
 			<div class="col col-lg-4" id="what">
 				<h3>What?</h3>
