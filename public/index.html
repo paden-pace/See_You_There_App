@@ -15,20 +15,20 @@
 
 	<!-- Calendar CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/clndr-default.css">
+	<link rel="stylesheet" href="assets/css/clndr-default.css">
 
-    <!-- Bootstrap Link -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<!-- Bootstrap Link -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 <!--     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhPuUy4ApUrRco8HXpxS3oT3p6fDEN5eU&libraries=places,weather&callback=initMap">
-    </script> -->
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhPuUy4ApUrRco8HXpxS3oT3p6fDEN5eU&libraries=places,weather&callback=initMap">
+	</script> -->
 	
 	<!-- Firebase link -->
 	<script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
 
-    <!-- Local CSS Link -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<!-- Local CSS Link -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body background="assets/css/austin_skyline_night.jpeg">
@@ -109,78 +109,85 @@
 			<div class="col col-lg-4 question-row when-box" id="when">
 				<h3>When?</h3>
 				<div class="row when-body">
-                    <div class="col-md-12">
-                       <!--  <ul class="nav nav-tabs row list-when">
-                            <li role="presentation" class="active" id="list-upcoming"><a class="upcoming-tab" id="upcoming-tab" data-toggle="tab">Upcoming Events</a></li>
+					<div class="col-md-12">
+						<div class="row">
 
-                            <li role="presentation" class="" id="list-cal"><a class="cal-tab" id="cal-tab" data-toggle="tab">Calendar</a></li>
+						</div>
+						<ul class="nav nav-tabs row list-when">
+							<li role="presentation" class="active" id="list-upcoming"><a class="event-tab" id="upcoming-tab" data-toggle="tab">Upcoming Events</a></li>
 
-                            <li role="presentation" class="" id="list-create"><a class="create-tab" id="create-tab" data-toggle="tab" >Create Event</a></li>
-                        </ul> -->
+							<li role="presentation" class="" id="list-cal"><a class="event-tab" id="cal-tab" data-toggle="tab">Calendar</a></li>
 
-                        <div class=" row">
-                            <div class="col-md-12 upcoming-div " id="upcoming-div">
-                                <div class="row">
-                                    <h4>Upcoming Events</h4>
-                                    <div class="upcoming-here" id="upcoming-here">
-                                        <table class='table upcoming-Table' id="upcoming-Table">
-                                            <th>Event Name</th>
-                                            <th>Date</th>
-                                            <th>Time</th>
-                                            <th>Remove Event</th>
-                                            <tbody class="tbody upcoming-Tbody" id="upcoming-Tbody">
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class= "newButtonGoHere" id="newButtonGoHere">
-                                    </div>
-                            <div class="col-md-12 calendar-div" id="calendar-div">
-                                <div class="row">
-                                    <h4>Calendar</h4>
-                                    <div class="container">
-                                        <div class="myCal cal1 row" id="myCal">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12 create-div " id="create-div">
-                                <div class="row">
-                                    <div class="new-event-div col-md-5" id="new-event-div">
-                                        <h4>Create Event</h4>
-                                        <form class= id="new-event-form" enctype="text/plain" action="">
+							<li role="presentation" class="" id="list-create"><a class="event-tab" id="create-tab" data-toggle="tab" >Create Event</a></li>
+						</ul>
 
-                                            <div class="row">
-                                                <label class="event-name-label" id="event-name-label">Event Name:</label><br>
-                                                <input type="text" value="" name="event-name" placeholder="Jim's Party" class="input" id="event-name-input"><br>
-                                            </div>
+						<div class="tab-content row">
+							<div class="col-md-12 event-pane tab-pane fade in active upcoming-div " id="upcoming-div">
+								<div class="row">
+									<h4>Upcoming Events</h4>
+									<div class="upcoming-here" id="upcoming-here">
+										<table class='table upcoming-Table' id="upcoming-Table">
+											<th>Event Name</th>
+											<th>Date</th>
+											<th>Time</th>
+											<th>Remove Event</th>
+											<tbody class="tbody upcoming-Tbody" id="upcoming-Tbody">
+											</tbody>
+										</table>
+									</div>
+									<div class= "newButtonGoHere" id="newButtonGoHere">
+									</div>
+								</div>
+							</div>/
 
-                                            <div class="row">
-                                                <label class="event-start-date-label" id="event-start-date-label">Event Start Date: (YYYY-MM-DD)</label><br>
-                                                <input type="text" value="" name="event-start-date" placeholder="2017-02-09" class="input" id="event-start-date-input"><br>
-                                            </div>
+							<div class="col-md-12 event-pane tab-pane fade calendar-div" id="calendar-div">
+								<div class="row">
+									<h4>Calendar</h4>
+									<div class="container">
+										<div class="myCal cal1 row" id="myCal">
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="col-md-12 event-pane tab-pane fade create-div " id="create-div">
+								<div class="row">
+									<div class="new-event-div col-md-5" id="new-event-div">
+										<h4>Create Event</h4>
+										<form class= id="new-event-form" enctype="text/plain" action="">
 
-                                            <div class="row">
-                                                <label class="event-start-time-label" id="event-start-time-label">Event Start Time: (Military Time)</label><br>
-                                                <input type="text" value="" name="event-start-time" placeholder="16:00:00" class="input" id="event-start-time-input"><br>
-                                            </div>
+											<div class="row">
+												<label class="event-name-label" id="event-name-label">Event Name:</label><br>
+												<input type="text" value="" name="event-name" placeholder="Jim's Party" class="input" id="event-name-input"><br>
+											</div>
 
-                                            <div class="row">
-                                                <label class="event-end-date-label" id="event-end-date-label">Event End Date: (YYYY-MM-DD)</label><br>
-                                                <input type="text" value="" name="event-end-date" placeholder="2017-02-09" class="input" id="event-end-date-input"><br>
-                                            </div>
+											<div class="row">
+												<label class="event-start-date-label" id="event-start-date-label">Event Start Date: (YYYY-MM-DD)</label><br>
+												<input type="text" value="" name="event-start-date" placeholder="2017-02-09" class="input" id="event-start-date-input"><br>
+											</div>
 
-                                            <div class="row">
-                                                <label class="event-end-time-label" id="event-end-time-label">Event End Time: (Military Time)</label><br>
-                                                <input type="text" value="" name="event-end-time" placeholder="16:00:00" class="input" id="event-end-time-input"><br>
-                                            </div>
-                                        </form>
-                                        <button class="btn btn-success btnSignUp" id="new-date-button">Create</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+											<div class="row">
+												<label class="event-start-time-label" id="event-start-time-label">Event Start Time: (Military Time)</label><br>
+												<input type="text" value="" name="event-start-time" placeholder="16:00:00" class="input" id="event-start-time-input"><br>
+											</div>
+
+											<div class="row">
+												<label class="event-end-date-label" id="event-end-date-label">Event End Date: (YYYY-MM-DD)</label><br>
+												<input type="text" value="" name="event-end-date" placeholder="2017-02-09" class="input" id="event-end-date-input"><br>
+											</div>
+
+											<div class="row">
+												<label class="event-end-time-label" id="event-end-time-label">Event End Time: (Military Time)</label><br>
+												<input type="text" value="" name="event-end-time" placeholder="16:00:00" class="input" id="event-end-time-input"><br>
+											</div>
+										</form>
+										<button class="btn btn-success btnSignUp" id="new-date-button">Create</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
 
 			</div>
@@ -248,7 +255,7 @@
 		</div>
 
 
- 		<!-- <div class="row row-go"> -->
+		<!-- <div class="row row-go"> -->
 			<div>
 				<button>Go</button>
 			</div>
@@ -309,9 +316,9 @@
 
 <!-- Calendar JavaScript -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
-    <script src="assets/javascript/clndr-default.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+	<script src="assets/javascript/clndr-default.js"></script>
 
 
 

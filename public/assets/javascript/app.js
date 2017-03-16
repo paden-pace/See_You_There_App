@@ -105,22 +105,34 @@ $(document).ready(function(){
 	
 
 function upcomingClick () {
+		event.preventDefault();
 		$("#upcoming-div").addClass("active in");
 		$("#calendar-div").removeClass("active in");
 		$("#create-div").removeClass("active in");
+		$("#list-upcoming").addClass("active");
+		$("#list-cal").removeClass("active");
+		$("#list-create").removeClass("active");
 		console.log("function upcoming clicked.");
 		
 	};
 	function calendarClick () {
+		event.preventDefault();
 		$("#upcoming-div").removeClass("active in");
 		$("#calendar-div").addClass("active in");
 		$("#create-div").removeClass("active in");
+		$("#list-upcoming").removeClass("active");
+		$("#list-cal").addClass("active");
+		$("#list-create").removeClass("active");
 		console.log("function calendar clicked.");
 	};
 	function createClick () {
+		event.preventDefault();
 		$("#upcoming-div").removeClass("active in");
 		$("#calendar-div").removeClass("active in");
 		$("#create-div").addClass("active in");
+		$("#list-upcoming").removeClass("active");
+		$("#list-cal").removeClass("active");
+		$("#list-create").addClass("active");
 		console.log("function create clicked.");
 	};
 
