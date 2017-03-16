@@ -24,6 +24,7 @@ $(document).ready(function(){
 	$("#btnLogIn").on("click", function(){
 		var email = $("#email-input").val().trim();
 		var password = $("#password-input").val().trim();
+
 		console.log("Log In clicked");
 
 		// Sign In to FBase
@@ -146,7 +147,31 @@ function upcomingClick () {
 		createClick ();
 	});
 
+	function curContactClick () {
+		event.preventDefault();
+		$("#cur-contact-div").addClass("active in");
+		$("#new-contact-div").removeClass("active in");
+		$("#list-cur-contact").addClass("active");
+		$("#list-new-contact").removeClass("active");
+		console.log("function cur contact clicked.");
+	};
 
+	function newContactClick () {
+		event.preventDefault();
+		$("#cur-contact-div").removeClass("active in");
+		$("#new-contact-div").addClass("active in");
+		$("#list-cur-contact").removeClass("active");
+		$("#list-new-contact").addClass("active");
+		console.log("function new contact clicked.");
+	};
+
+	$("#cur-contact-tab").on('click', function(){
+		 curContactClick ();
+	});
+
+	$("#new-contact-tab").on('click', function(){
+		 newContactClick ();
+	});
 
 
 		console.info(
