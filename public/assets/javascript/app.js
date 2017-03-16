@@ -1,18 +1,23 @@
 
+var calendars = {};
+
 $(document).ready(function(){
 
 	// to show the JavaScript page is running
 	console.log("JS Attached");
 
-	// Initialize Firebase
-	var config = {
-	apiKey: "AIzaSyAOvuBjDloWxmel5DKtcKp2IpIjyPZDqp4",
-	authDomain: "groupproject-1-ftp.firebaseapp.com",
-	databaseURL: "https://groupproject-1-ftp.firebaseio.com",
-	storageBucket: "groupproject-1-ftp.appspot.com",
-	messagingSenderId: "355866249539"
-	};
-	firebase.initializeApp(config);
+		// Initialize Firebase
+		var config = {
+		apiKey: "AIzaSyAOvuBjDloWxmel5DKtcKp2IpIjyPZDqp4",
+		authDomain: "groupproject-1-ftp.firebaseapp.com",
+		databaseURL: "https://groupproject-1-ftp.firebaseio.com",
+		storageBucket: "groupproject-1-ftp.appspot.com",
+		messagingSenderId: "355866249539"
+		};
+		firebase.initializeApp(config);
+
+		var database = firebase.database();
+		var ref = database.ref();
 
 
 	// Log In Button
@@ -68,6 +73,7 @@ $(document).ready(function(){
 			var uid = user.uid;
 			var providerData = user.providerData;
 
+
 			//Removing Log-In page
 			$("#btnLogOut").removeClass("hide");
 			$("#main-cont").removeClass("hide");
@@ -97,6 +103,114 @@ $(document).ready(function(){
 			var emailCont = "";
 			var phoneCont = "";
 	
+
+function upcomingClick () {
+		$("#upcoming-div").addClass("active in");
+		$("#calendar-div").removeClass("active in");
+		$("#create-div").removeClass("active in");
+		console.log("function upcoming clicked.");
+		
+	};
+	function calendarClick () {
+		$("#upcoming-div").removeClass("active in");
+		$("#calendar-div").addClass("active in");
+		$("#create-div").removeClass("active in");
+		console.log("function calendar clicked.");
+	};
+	function createClick () {
+		$("#upcoming-div").removeClass("active in");
+		$("#calendar-div").removeClass("active in");
+		$("#create-div").addClass("active in");
+		console.log("function create clicked.");
+	};
+
+	$("#upcoming-tab").on('click', function(){
+		 upcomingClick ();
+	});
+	$("#cal-tab").on('click', function(){
+		calendarClick ();
+	});
+	$("#create-tab").on('click', function(){
+		createClick ();
+	});
+
+
+
+
+		console.info(
+				'Welcome to the CLNDR demo. Click around on the calendars and' +
+				'the console will log different events that fire.');
+
+		// Assuming you've got the appropriate language files,
+		// clndr will respect whatever moment's language is set to.
+		// moment.locale('ru');
+
+
+
+		// Here's some magic to make sure the dates are happening this month.
+		var thisMonth = moment().format('YYYY-MM');
+		// Events to load into calendar
+		var eventsArray = [];
+		var newName;
+		var newDate;
+		var newStart;
+		var newEnd;
+		var newEvent;
+		var rightNow = moment();
+
+		function refreshCal () {
+			console.log(eventsArray);
+			calendars.clndr1 = $('.cal1').clndr({
+				events: eventsArray,
+				clickEvents: {
+					click: function (target) {
+							console.log('Cal-1 clicked: ', target);
+					},
+					today: function () {
+							console.log('Cal-1 today');
+					},
+					nextMonth: function () {
+							console.log('Cal-1 next month');
+					},
+					previousMonth: function () {
+							console.log('Cal-1 previous month');
+					},
+					onMonthChange: function () {
+							console.log('Cal-1 month changed');
+					},
+					nextYear: function () {
+							console.log('Cal-1 next year');
+					},
+					previousYear: function () {
+							console.log('Cal-1 previous year');
+					},
+					onYearChange: function () {
+							console.log('Cal-1 year changed');
+					},
+					nextInterval: function () {
+							console.log('Cal-1 next interval');
+					},
+					previousInterval: function () {
+							console.log('Cal-1 previous interval');
+					},
+					onIntervalChange: function () {
+							console.log('Cal-1 interval changed');
+					}
+				},
+				multiDayEvents: {
+					singleDay: 'date',
+					endDate: 'endDate',
+					startDate: 'startDate'
+				},
+				showAdjacentMonths: true,
+				adjacentDaysChangeMonth: false
+			});
+			console.log("calendar refreshed.")
+		};
+
+
+
+
 
 			// New Contact Button Click
 			$("#btnNewCont").on("click", function(event) {
@@ -167,7 +281,113 @@ $(document).ready(function(){
 				$("#exContactTbody").append(markup);
 				});
 
+								$("#new-date-button").on("click", function(event) {
+						event.preventDefault();
 
+
+						// Grab values from text boxes
+						newName = $("#event-name-input").val().trim();
+						newStartDate = $("#event-start-date-input").val().trim();
+						newStartTime = $("#event-start-time-input").val().trim();
+						newEndDate = $("#event-end-date-input").val().trim();
+						newEndTime = $("#event-end-time-input").val().trim();
+
+						// var newStart = (newStartDate + "T" + newStartTime);
+						// var newEnd = (newEndDate + "T" + newEndTime);
+
+						console.log(newName);
+						console.log(newStartDate);
+						console.log(newStartTime);
+						console.log(newEndDate);
+						console.log(newEndTime);
+
+						// newEvent = {
+						//      title: newName,
+						//      start: newStart,
+						//      end: newEnd
+						//  };
+
+						database.ref('users/'+uid+'/events').push({
+								title: newName,
+								start: newStartDate,
+								startTime: newStartTime,
+								end: newEndDate,
+								endTime: newEndTime,
+								dateAdded: firebase.database.ServerValue.TIMESTAMP
+						});
+
+
+				});
+
+				// Firebase watcher + initial loader HINT: .on("value")
+				database.ref('users/'+uid+'/events').on("child_added", function(snapshot) {
+
+						// storing the snapshot.val() in a variable for convenience
+						var snapValue = snapshot.val();
+						
+						// Getting an array of each key In the snapshot object
+						var snapValueArr = Object.keys(snapValue);
+
+						// Finding the last user's key
+						var lastIndex = snapValueArr.length - 1;
+
+						var lastKey = snapValueArr[lastIndex];
+
+						// Using the last user's key to access the last added user object
+						var lastObj = snapValue[lastKey]
+
+		
+
+						// Handle the errors
+				}, function(errorObject) {
+						console.log("Errors handled: " + errorObject.code);
+				});
+
+
+
+				database.ref('users/'+uid+'/events').orderByChild("start").on("child_added", function(snapshot) {
+
+						var calMarkUp = {
+							title: snapshot.val().title,
+							startDate: snapshot.val().start,
+							endDate: snapshot.val().end 
+						};
+
+						var newKey = snapshot.key;
+						console.log(newKey);
+		
+						
+						eventsArray.push(calMarkUp);
+						// console.log(eventsArray);
+						refreshCal();
+						$('.cal1').clndr().setEvents(eventsArray);
+
+						var adjustedStart = moment(snapshot.val().start).format('LL');
+						var adjustedStartTime = moment(snapshot.val().startTime).format('LT');
+						var adjustedEnd = moment(snapshot.val().end).format('LL');
+						var adjustedEndTime = moment(snapshot.val().endTime).format('LT');
+
+						var newEventButton = $('<button/>',{
+							class: 'delete-button',
+							text: 'Remove: '+snapshot.val().title,
+							value: 'remove',
+							click: function removal(){
+								ref.child(newKey).remove().key;
+								location.reload(true);
+							}
+						});
+
+
+						$("#newButtonGoHere").append(newEventButton);
+
+						var newUpcoming = "<tr><td>" + snapshot.val().title 
+						+ "</td><td>" + adjustedStart 
+						+ "</td><td>" + snapshot.val().startTime
+						+ "</td><td>" + newEventButton
+						+ "</td></tr>";
+						$("#upcoming-Tbody").append(newUpcoming);
+
+				});
 
 		} else {
 			// User is signed out revert to log in page
@@ -176,8 +396,21 @@ $(document).ready(function(){
 			$("#log-in-cont").removeClass("hide");
 			$("#exContactTbody").html("");
 		}
+
+		$(document).keydown( function(e) {
+				// Left arrow
+				if (e.keyCode == 37) {
+						calendars.clndr1.back();
+				}
+
+				// Right arrow
+				if (e.keyCode == 39) {
+						calendars.clndr1.forward();
+				}
+		});
 	});
 });
+
 
 
 

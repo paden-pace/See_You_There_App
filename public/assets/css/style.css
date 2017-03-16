@@ -15,60 +15,89 @@
 /*#A2ADB9 lightest cobalt*/
 
 body{
-	/*background-color:#A2ADB9;*/
-	background: rgba(54, 25, 25, .5);
+	width:100%;
+	height:auto;
+	background-image: url(http://hd-wall-papers.com/images/wallpapers/austin-wallpaper/austin-wallpaper-5.jpg);
+	background-repeat:no-repeat;
+	background-position: 0 0 0 px;
+	-webkit-background-size:cover;
+	background-attachment: fixed; 
 
 }
-ul{
-	list-style-type:none;
 
-}
-.btn-group{
-	float:right
-}
-
-#nav-register{
-	font-size:16px;
-	margin: 5px;
-	margin-top: -20px;
-/*	padding-bottom:20px;
-*/}
-#nav-login{
- 	font-size:16px;
- 	margin: 5px;
- 	margin-top: -20px;
-/* 	padding-bottom:20px;
-*/ 	
-}
-.row-title{
+.title{
 	text-align:center;
 	background-color:white;
 	color:#5c8d23;
 	width:100%;
-}
-#when{
-	color:black;
-	width:350px;
-	height:350px;
-	border: 3px solid #973c13;
+	height:100px;
+	padding-top:10px;
+	margin-bottom: 50px;
 }
 #where{
-	color:black;
-	width:100%;
+	color:#D6D2C4;
+	width:97.5%;
 	height:500px;
-	border: 3px solid #973c13;
+	border: 1px solid #D6D2C4;
+	margin-left:15px;
+	margin-bottom:50px;
 }
-#who{
-	color:black;
-	margin-left:45px;
-	width:350px;
-	height:350px;
-	border: 3px solid #973c13;
+
+.question-row{
+	text-align:center;
+	color: #D6D2C4;
+	font-style:bold;
+	border: 1px solid #D6D2C4;
+	margin-bottom:50px;
+}
+
+.input-options{
+	margin-top:15px;
+	text-align:center;	
+
+}
+.when-box{
+	background-color: #9db1a8;
+	width:300px;
+	height:auto;
+	float:left;
+
+}
+.who-box{
+	background-color: #9db1a8;
+	width:300px;
+	height:auto;
+	align-items:center;
+	margin-left:110px;
+}
+.what-box{
+	background-color: #9db1a8;
+	width:300px;
+	height:auto;
+	align-items:center;
+	float:right;
+
+}
+
+#when{
+	color:#D6D2C4;
+	float:left;
+	width:300px;
+	height:300px;
+	border: 3px solid #D6D2C4;
+}
+
+#who{	
+	color:#D6D2C4;
+	width:300px;
+	height:300px;
+	border: 3px solid #D6D2C4;
+	margin-left:110px;
 }
 #what{
-	color:black;
-	margin-left:45px;
-	width:350px;
-	height:350px;
-	border: 3px solid #973c13;
+	color:#D6D2C4;
+	float:right;
+	width:300px;
+	height:300px;
+	border: 3px solid #D6D2C4;
 }
