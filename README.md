@@ -6,7 +6,7 @@
 ## Show the app running and solving the problem (4 minutes)
 
 ## Contributers 
-### Frank
+### Frank Miranda
 ### Travis Nash 
 ### Paden Pace
 
