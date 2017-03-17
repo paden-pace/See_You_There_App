@@ -345,25 +345,23 @@ $(document).ready(function(){
 				$("#exContactTbody").append(markup);
 				});
 
-								$("#new-date-button").on("click", function(event) {
+						$("#new-date-button").on("click", function(event) {
 						event.preventDefault();
 
 
 						// Grab values from text boxes
 						newName = $("#event-name-input").val().trim();
+						newLocation = $("#event-loc-select").val().trim();
 						newStartDate = $("#event-start-date-input").val().trim();
 						newStartTime = $("#event-start-time-input").val().trim();
-						newEndDate = $("#event-end-date-input").val().trim();
-						newEndTime = $("#event-end-time-input").val().trim();
 
 						// var newStart = (newStartDate + "T" + newStartTime);
 						// var newEnd = (newEndDate + "T" + newEndTime);
 
 						console.log(newName);
+						console.log(newLocation);
 						console.log(newStartDate);
 						console.log(newStartTime);
-						console.log(newEndDate);
-						console.log(newEndTime);
 
 						// newEvent = {
 						//      title: newName,
@@ -373,10 +371,9 @@ $(document).ready(function(){
 
 						database.ref('users/'+uid+'/events').push({
 								title: newName,
+								location: newLocation,
 								start: newStartDate,
 								startTime: newStartTime,
-								end: newEndDate,
-								endTime: newEndTime,
 								dateAdded: firebase.database.ServerValue.TIMESTAMP
 						});
 
@@ -416,8 +413,7 @@ $(document).ready(function(){
 
 						var calMarkUp = {
 							title: snapshot.val().title,
-							startDate: snapshot.val().start,
-							endDate: snapshot.val().end 
+							startDate: snapshot.val().start
 						};
 
 						var newKey = snapshot.key;
@@ -430,9 +426,7 @@ $(document).ready(function(){
 						$('.cal1').clndr().setEvents(eventsArray);
 
 						var adjustedStart = moment(snapshot.val().start).format('LL');
-						var adjustedStartTime = moment(snapshot.val().startTime).format('LT');
-						var adjustedEnd = moment(snapshot.val().end).format('LL');
-						var adjustedEndTime = moment(snapshot.val().endTime).format('LT');
+						var adjustedStartTime = moment(snapshot.val().startTime).format('h:mm:ss a');
 
 // var database = firebase.database();
 // var ref = database.ref();
@@ -455,9 +449,10 @@ $(document).ready(function(){
 						$("#newButtonGoHere").append(newEventButton);
 
 						var newUpcoming = "<tr><td>" + snapshot.val().title 
+						+ "</td><td>" + snapshot.val().location 
 						+ "</td><td>" + adjustedStart 
 						+ "</td><td>" + snapshot.val().startTime
-						+ "</td><td>" + newEventButton
+						// + "</td><td>" + newEventButton
 						+ "</td></tr>";
 						$("#upcoming-Tbody").append(newUpcoming);
 

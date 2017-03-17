@@ -104,9 +104,9 @@
 									<div class="upcoming-here" id="upcoming-here">
 										<table class='table upcoming-Table' id="upcoming-Table">
 											<th>Event Name</th>
+											<th>Location</th>
 											<th>Date</th>
 											<th>Time</th>
-											<th>Remove Event</th>
 											<tbody class="tbody upcoming-Tbody" id="upcoming-Tbody">
 											</tbody>
 										</table>
@@ -131,65 +131,65 @@
 			</div>
 			
 			<div class="col col-lg-3 col-perm who-div" id="who-div">
-					<h3>Who?</h3>
-					<div class="row who-body">
-						<div class="col-md-12">
-							<div class="row">
-							<ul class="nav nav-tabs row list-who">
-								<li role="presentation" class="active" id="list-cur-contact"><a class="cur-contact-tab" id="cur-contact-tab" data-toggle="tab">Current Contacts</a></li>
+				<h3>Who?</h3>
+				<div class="row who-body">
+					<div class="col-md-12">
+						<div class="row">
+						<ul class="nav nav-tabs row list-who">
+							<li role="presentation" class="active" id="list-cur-contact"><a class="cur-contact-tab" id="cur-contact-tab" data-toggle="tab">Current Contacts</a></li>
 
-								<li role="presentation" class="" id="list-new-contact"><a class="new-contact-tab" id="new-contact-tab" data-toggle="tab" >New Contact</a></li>
-							</ul>
-							</div>
-							<div class="row">
-								<div class="col-md-12 event-pane tab-pane fade in active cur-contact-div " id="cur-contact-div">
-									<div class="row exContactTitle" id="exContactTitle">
-										<h3>Contact List:</h3>
-									</div>
-
-									<div class="row exContactForm" id="exContactForm">
-										<table class='table exContactTable' id="exContactTable">
-											<th>First Name</th>
-											<th>Last Name</th>
-											<th>Email</th>
-											<th>Phone</th>
-											<tbody class="tbody exContactTbody" id="exContactTbody">
-											</tbody>
-										</table>
-									</div>
+							<li role="presentation" class="" id="list-new-contact"><a class="new-contact-tab" id="new-contact-tab" data-toggle="tab" >New Contact</a></li>
+						</ul>
+						</div>
+						<div class="row">
+							<div class="col-md-12 event-pane tab-pane fade in active cur-contact-div " id="cur-contact-div">
+								<div class="row exContactTitle" id="exContactTitle">
+									<h3>Contact List:</h3>
 								</div>
 
-								<div class="col-md-12 event-pane tab-pane fade new-contact-div" id="new-contact-div">	
-									<div class="row newContactTitle" id="newContactTitle">
-										<h3>Add New Contact:</h3>
-									</div>
-									<div class="row newContactForm" id="newContactForm">
-										<form class= id="contact-form" enctype="text/plain" action="">
-											<div class="row">
-												<label class="first-name-cont-label" id="first-name-cont-label">First Name:</label><br>
-												<input type="text" value="" name="first-name-cont" placeholder="Bob" class="input" id="first-name-cont-input"><br>
-											</div>
-											<div class="row">
-												<label class="last-name-cont-label" id="last-name-cont-label">Last Name:</label><br>
-												<input type="text" value="" name="last-name-cont" placeholder="Smith" class="input" id="last-name-cont-input"><br>
-												</div>
-											<div class="row">
-												<label class="email-cont-label" id="email-cont-label">Email:</label><br>
-												<input type="text" value="" name="email" placeholder="Bob@Example.com" class="input" id="email-cont-input"><br>
-											</div>
-											<div class="row">
-												<label class="phone-cont-label" id="phone-cont-label">Phone:</label><br>
-												<input type="text" value="" name="phone" placeholder="512-555-1234" class="input" id="phone-cont-input"><br>
-											</div>
-										</form>
-										<div>
-											<button class="btn btn-success btnNewCont" id="btnNewCont">Create</button>
+								<div class="row exContactForm" id="exContactForm">
+									<table class='table exContactTable' id="exContactTable">
+										<th>First Name</th>
+										<th>Last Name</th>
+										<th>Email</th>
+										<th>Phone</th>
+										<tbody class="tbody exContactTbody" id="exContactTbody">
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<div class="col-md-12 event-pane tab-pane fade new-contact-div" id="new-contact-div">	
+								<div class="row newContactTitle" id="newContactTitle">
+									<h3>Add New Contact:</h3>
+								</div>
+								<div class="row newContactForm" id="newContactForm">
+									<form class= id="contact-form" enctype="text/plain" action="">
+										<div class="row">
+											<label class="first-name-cont-label" id="first-name-cont-label">First Name:</label><br>
+											<input type="text" value="" name="first-name-cont" placeholder="Bob" class="input" id="first-name-cont-input"><br>
 										</div>
+										<div class="row">
+											<label class="last-name-cont-label" id="last-name-cont-label">Last Name:</label><br>
+											<input type="text" value="" name="last-name-cont" placeholder="Smith" class="input" id="last-name-cont-input"><br>
+											</div>
+										<div class="row">
+											<label class="email-cont-label" id="email-cont-label">Email:</label><br>
+											<input type="text" value="" name="email" placeholder="Bob@Example.com" class="input" id="email-cont-input"><br>
+										</div>
+										<div class="row">
+											<label class="phone-cont-label" id="phone-cont-label">Phone:</label><br>
+											<input type="text" value="" name="phone" placeholder="512-555-1234" class="input" id="phone-cont-input"><br>
+										</div>
+									</form>
+									<div>
+										<button class="btn btn-success btnNewCont" id="btnNewCont">Create</button>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+				</div>
 			</div>
 		</div>
 
@@ -268,15 +268,23 @@
 						<h3 class="panel-title">Places</h3>
 					</div>
 					<div class="panel-body" style="overflow-x:auto;">
-						<table id="placeInformation" class="table">
-							<tr>
-								<th>Name</th>
-								<th>Cheap</th>
-								<th>Rating</th>
-								<th>Google Info</th>
-								<th>Website</th>
-							</tr>
-						</table>
+						<div class="row">
+							<div class="col-md-9">
+								<table id="placeInformation" class="table">
+									<tr>
+										<th>Name</th>
+										<th>Cheap</th>
+										<th>Rating</th>
+										<th>Google Info</th>
+										<th>Website</th>
+									</tr>
+								</table>
+							</div>
+							<div class="col-md-3">
+								<div id="newLocButtonHere">
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -292,6 +300,13 @@
 							</div>
 
 							<div class="row">
+								<label class="event-loc-label" id="event-loc-label">Event Location:</label><br>
+								<select id="event-loc-select" class="form-control">
+									<option>No Location</option>
+								</select>
+							</div>
+
+							<div class="row">
 								<label class="event-start-date-label" id="event-start-date-label">Event Start Date: (YYYY-MM-DD)</label><br>
 								<input type="text" value="" name="event-start-date" placeholder="2017-02-09" class="input" id="event-start-date-input"><br>
 							</div>
@@ -301,7 +316,7 @@
 								<input type="text" value="" name="event-start-time" placeholder="16:00:00" class="input" id="event-start-time-input"><br>
 							</div>
 
-							<div class="row">
+<!-- 							<div class="row">
 								<label class="event-end-date-label" id="event-end-date-label">Event End Date: (YYYY-MM-DD)</label><br>
 								<input type="text" value="" name="event-end-date" placeholder="2017-02-09" class="input" id="event-end-date-input"><br>
 							</div>
@@ -309,94 +324,14 @@
 							<div class="row">
 								<label class="event-end-time-label" id="event-end-time-label">Event End Time: (Military Time)</label><br>
 								<input type="text" value="" name="event-end-time" placeholder="16:00:00" class="input" id="event-end-time-input"><br>
-							</div>
+							</div> -->
 						</form>
 						<button class="btn btn-success btnSignUp" id="new-date-button">Create</button>
 					</div>
 				</div>
 			</div>
-
 		</div>
 
-
-		<!-- <div class="col col-lg-4 question-row what-box" id="what">
-			<h3>What?</h3>
-		</div>
-
-		<div class="row row-area-select">
-			<div class="col-md-12">
-			</div>
-				<div id="where">
-			</div>
-		</div>
-
-
-		<div class="row info-row row-select"> -->
-			
-
-			
-
-
-
-			
-
-
-
-		<!-- <div class="row row-go"> -->
-			<div>
-				<button>Go</button>
-			</div>
-		</div> -->
-
-		<!-- <div class="row row-all-options">
-			<div class="col-lg-12 col-options">
-				<div class="row row-title-options">
-					<div class="col-md-4">
-						<h3>When Options:</h3>
-					</div>
-					<div class="col-md-4">
-						<h3>Where Options:</h3>
-					</div>
-					<div class="col-md-4">
-						<h3>What Options:</h3>
-					</div>
-				</div>
-				<div class="row row-options">
-					<div class="col-md-4">
-						<p>When Options 1</p>
-					</div>
-					<div class="col-md-4">
-						<p>Where Options 1</p>
-					</div>
-					<div class="col-md-4">
-						<p>What Options 1</p>
-					</div>
-				</div>
-				<div class="row row-options">
-					<div class="col-md-4">
-						<p>When Options 2</p>
-					</div>
-					<div class="col-md-4">
-						<p>Where Options 2</p>
-					</div>
-					<div class="col-md-4">
-						<p>What Options 2</p>
-					</div>
-				</div>
-				<div class="row row-options">
-					<div class="col-md-4">
-						<p>When Options 3</p>
-					</div>
-					<div class="col-md-4">
-						<p>Where Options 3</p>
-					</div>
-					<div class="col-md-4">
-						<p>What Options 3</p>
-					</div>
-				</div> 
-				
-			</div> 
--->
 		</div>
 	</div>
 	<script type="text/javascript" src="assets/javascript/api.js"></script>

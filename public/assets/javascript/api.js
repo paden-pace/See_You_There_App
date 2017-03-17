@@ -90,6 +90,8 @@
           clearMarkers();
           $("#placeInformation").find("tr:gt(0)").remove();
           $("#weatherForecast").find("tr:gt(0)").remove();
+          var resetLocOption = "<option>No Location</option>";
+          $("#event-loc-select").html(resetLocOption);
           placeMarkerAndPanTo(e.latLng, map);
           getWeather(e.latLng.lat(), e.latLng.lng());
           var interest = $("#interest").find(":selected").text();
@@ -219,14 +221,19 @@
           }
           var placeResults = "<tr><td>" + results.name + "</td>" +
                       "<td>" + priceRating + "</td>" + 
-                      "<td>" + results.rating + "/5</td>" + 
+                      "<td>" + results.rating + " /5</td>" + 
                       "<td><a href='" + results.url + "'>Google Info</a></td>" +
                       "<td><a href='" + results.website + "'>Website</a></td></tr>";      
 
-
-                                "</td></tr>" +
           $("#placeInformation").append(placeResults); 
         }
+
+
+
+            var newLocOption = "<option>" + results.name + "</option>";
+
+            $("#event-loc-select").append(newLocOption);
+
       }
       function createMarker(place) {
         var placeLoc = place.geometry.location;
