@@ -17,6 +17,7 @@
 
 	<!-- Calendar CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
 	<link rel="stylesheet" href="assets/css/clndr-default.css">
 
 	<!-- Bootstrap Link -->
@@ -80,22 +81,20 @@
 		</div>
 	</div>
 
-
-	<div class="header">
-		<nav class="navbar navbar-default">
-		  <div class="container-fluid">
-		    <div class="navbar-header hello-msg">
-		      	<h3 id="hello-msg">Hello!</h3>
-		    </div>
-		    <div class="navbar navbar-right">
-				<button class="btn btn-default btnLogOut hide" id="btnLogOut">Log Out</button>
-			</div>
-		  </div>
-		</nav>
-	</div>
-
-
 	<div class="container hide" id="main-cont">
+		<div class="header">
+			<nav class="navbar navbar-default">
+			  <div class="container-fluid">
+			    <div class="navbar-header hello-msg">
+			      	<h3 id="hello-msg">Hello!</h3>
+			    </div>
+			    <div class="navbar navbar-right">
+					<button class="btn btn-default btnLogOut hide" id="btnLogOut">Log Out</button>
+				</div>
+			  </div>
+			</nav>
+		</div>
+	
 		<div class="row row-title">
 			<h1 class="main-title">See you there.</h1>
 		</div>
@@ -103,7 +102,7 @@
 		<div class="row row-perm row-perm-top">
 			<div class="col col-lg-6 col-perm when-div" id="when-div">
 				<div class="div-perm-inner panel panel-default">
-					<div class="row panel-heading perm-heading when-perm-title">
+					<div class="row panel-heading perm-title when-perm-title">
 						<h2 class="small-h2">Upcoming Events</h2>
 					</div>
 					<div class="row perm-body when-body panel-body">
@@ -186,17 +185,18 @@
 									</div>
 								</div>
 							</div>
-						</div>
 					</div>
 				</div>
 			</div>
-		</div>	
+		</div>
+		
 
 		<div class="row row-perm row-perm-bottom">
-			<div class="col col-lg-12 col-perm calendar-div panel panel-default" id="calendar-div">
-				<div class="div-perm-inner div-cal-inner">
-					<div class="row perm-title panel-heading">
-						<h2>Calendar</h2>
+			<div class="col col-lg-2"></div>
+			<div class="col col-lg-8 col-centered col-perm calendar-div" id="calendar-div">
+				<div class="div-perm-inner panel panel-default div-cal-inner">
+					<div class="row perm-title panel-heading cal-perm-title">
+						<h2 class="small-h2">Calendar</h2>
 					</div>
 					<div class="row perm-body cal-body panel-body">
 						<div class="container">
@@ -206,10 +206,13 @@
 					</div>
 				</div>
 			</div>
+			<div class="col col-lg-2"></div>
 		</div>
 
-		<div class="question-row new-event-title">
-			<h2>Find your next event</h2>
+		<div class="question-row find-next-div">
+			<div class="col-lg-12 find-next-inner">
+				<h2 class="find-next">Find your next event</h2>
+			</div>
 		</div>
 
 		<div class="row question-row where-box">
@@ -340,8 +343,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
-
 		</div>
 	</div>
 	<script type="text/javascript" src="assets/javascript/api.js"></script>
