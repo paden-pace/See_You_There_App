@@ -105,47 +105,7 @@ $(document).ready(function(){
 			var phoneCont = "";
 	
 
-function upcomingClick () {
-		event.preventDefault();
-		$("#upcoming-div").addClass("active in");
-		$("#calendar-div").removeClass("active in");
-		$("#create-div").removeClass("active in");
-		$("#list-upcoming").addClass("active");
-		$("#list-cal").removeClass("active");
-		$("#list-create").removeClass("active");
-		console.log("function upcoming clicked.");
-		
-	};
-	function calendarClick () {
-		event.preventDefault();
-		$("#upcoming-div").removeClass("active in");
-		$("#calendar-div").addClass("active in");
-		$("#create-div").removeClass("active in");
-		$("#list-upcoming").removeClass("active");
-		$("#list-cal").addClass("active");
-		$("#list-create").removeClass("active");
-		console.log("function calendar clicked.");
-	};
-	function createClick () {
-		event.preventDefault();
-		$("#upcoming-div").removeClass("active in");
-		$("#calendar-div").removeClass("active in");
-		$("#create-div").addClass("active in");
-		$("#list-upcoming").removeClass("active");
-		$("#list-cal").removeClass("active");
-		$("#list-create").addClass("active");
-		console.log("function create clicked.");
-	};
 
-	$("#upcoming-tab").on('click', function(){
-		 upcomingClick ();
-	});
-	$("#cal-tab").on('click', function(){
-		calendarClick ();
-	});
-	$("#create-tab").on('click', function(){
-		createClick ();
-	});
 
 	function curContactClick () {
 		event.preventDefault();
@@ -174,6 +134,15 @@ function upcomingClick () {
 	});
 
 
+
+
+
+//------------------------------------------------------------
+//               Calendar JS
+//-------------------------------------------
+
+
+
 		console.info(
 				'Welcome to the CLNDR demo. Click around on the calendars and' +
 				'the console will log different events that fire.');
@@ -194,59 +163,117 @@ function upcomingClick () {
 		var newEnd;
 		var newEvent;
 		var rightNow = moment();
+		var numberOfEvents = 0;
+
+
 
 		function refreshCal () {
-			console.log(eventsArray);
-			calendars.clndr1 = $('.cal1').clndr({
-				events: eventsArray,
-				clickEvents: {
-					click: function (target) {
-							console.log('Cal-1 clicked: ', target);
+			if(eventsArray.length == 0) {
+				console.log("trigger if : " + eventsArray);
+				calendars.clndr1 = $('.cal1').clndr({
+					events:[
+					{
+						title: 'Example Event',
+						startDate: moment(),
+						endDate: moment()
+					}],
+					clickEvents: {
+						click: function (target) {
+								console.log('Cal-1 clicked: ', target);
+						},
+						today: function () {
+								console.log('Cal-1 today');
+						},
+						nextMonth: function () {
+								console.log('Cal-1 next month');
+						},
+						previousMonth: function () {
+								console.log('Cal-1 previous month');
+						},
+						onMonthChange: function () {
+								console.log('Cal-1 month changed');
+						},
+						nextYear: function () {
+								console.log('Cal-1 next year');
+						},
+						previousYear: function () {
+								console.log('Cal-1 previous year');
+						},
+						onYearChange: function () {
+								console.log('Cal-1 year changed');
+						},
+						nextInterval: function () {
+								console.log('Cal-1 next interval');
+						},
+						previousInterval: function () {
+								console.log('Cal-1 previous interval');
+						},
+						onIntervalChange: function () {
+								console.log('Cal-1 interval changed');
+						}
 					},
-					today: function () {
-							console.log('Cal-1 today');
+					multiDayEvents: {
+						singleDay: 'date',
+						endDate: 'endDate',
+						startDate: 'startDate'
 					},
-					nextMonth: function () {
-							console.log('Cal-1 next month');
+					showAdjacentMonths: true,
+					adjacentDaysChangeMonth: false
+				});
+				console.log("calendar refreshed.")
+			} else {
+				console.log("trigger else : " + eventsArray);
+				calendars.clndr1 = $('.cal1').clndr({
+					events: eventsArray,
+					clickEvents: {
+						click: function (target) {
+								console.log('Cal-1 clicked: ', target);
+						},
+						today: function () {
+								console.log('Cal-1 today');
+						},
+						nextMonth: function () {
+								console.log('Cal-1 next month');
+						},
+						previousMonth: function () {
+								console.log('Cal-1 previous month');
+						},
+						onMonthChange: function () {
+								console.log('Cal-1 month changed');
+						},
+						nextYear: function () {
+								console.log('Cal-1 next year');
+						},
+						previousYear: function () {
+								console.log('Cal-1 previous year');
+						},
+						onYearChange: function () {
+								console.log('Cal-1 year changed');
+						},
+						nextInterval: function () {
+								console.log('Cal-1 next interval');
+						},
+						previousInterval: function () {
+								console.log('Cal-1 previous interval');
+						},
+						onIntervalChange: function () {
+								console.log('Cal-1 interval changed');
+						}
 					},
-					previousMonth: function () {
-							console.log('Cal-1 previous month');
+					multiDayEvents: {
+						singleDay: 'date',
+						endDate: 'endDate',
+						startDate: 'startDate'
 					},
-					onMonthChange: function () {
-							console.log('Cal-1 month changed');
-					},
-					nextYear: function () {
-							console.log('Cal-1 next year');
-					},
-					previousYear: function () {
-							console.log('Cal-1 previous year');
-					},
-					onYearChange: function () {
-							console.log('Cal-1 year changed');
-					},
-					nextInterval: function () {
-							console.log('Cal-1 next interval');
-					},
-					previousInterval: function () {
-							console.log('Cal-1 previous interval');
-					},
-					onIntervalChange: function () {
-							console.log('Cal-1 interval changed');
-					}
-				},
-				multiDayEvents: {
-					singleDay: 'date',
-					endDate: 'endDate',
-					startDate: 'startDate'
-				},
-				showAdjacentMonths: true,
-				adjacentDaysChangeMonth: false
-			});
-			console.log("calendar refreshed.")
+					showAdjacentMonths: true,
+					adjacentDaysChangeMonth: false
+				});
+				console.log("calendar refreshed.")
+			};
 		};
 
 
-
+		refreshCal ();
 
 
 			// New Contact Button Click
@@ -384,6 +411,9 @@ function upcomingClick () {
 
 				database.ref('users/'+uid+'/events').orderByChild("start").on("child_added", function(snapshot) {
 
+						var removeRef = database.ref('users/'+uid+'/events');
+
+
 						var calMarkUp = {
 							title: snapshot.val().title,
 							startDate: snapshot.val().start,
@@ -404,15 +434,22 @@ function upcomingClick () {
 						var adjustedEnd = moment(snapshot.val().end).format('LL');
 						var adjustedEndTime = moment(snapshot.val().endTime).format('LT');
 
+// var database = firebase.database();
+// var ref = database.ref();
+
 						var newEventButton = $('<button/>',{
 							class: 'delete-button',
 							text: 'Remove: '+snapshot.val().title,
 							value: 'remove',
 							click: function removal(){
-								ref.child(newKey).remove().key;
+								console.log("remove clicked")
+								removeRef.child(newKey).remove().key;
 								location.reload(true);
 							}
 						});
+
+						// var newEventButton2 = newEventButton[0].outerHTML;
+						// console.log("button new html: " + newEventButton2);
 
 
 						$("#newButtonGoHere").append(newEventButton);
@@ -423,6 +460,10 @@ function upcomingClick () {
 						+ "</td><td>" + newEventButton
 						+ "</td></tr>";
 						$("#upcoming-Tbody").append(newUpcoming);
+
+						numberOfEvents++;
+
+						console.log('number of events: ' + numberOfEvents);
 
 				});
 
