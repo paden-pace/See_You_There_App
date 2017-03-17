@@ -109,6 +109,8 @@ $(document).ready(function(){
 
 	function curContactClick () {
 		event.preventDefault();
+		$("#cur-contact-div").removeClass("hide");
+		$("#new-contact-div").addClass("hide");
 		$("#cur-contact-div").addClass("active in");
 		$("#new-contact-div").removeClass("active in");
 		$("#list-cur-contact").addClass("active");
@@ -118,6 +120,8 @@ $(document).ready(function(){
 
 	function newContactClick () {
 		event.preventDefault();
+		$("#cur-contact-div").addClass("hide");
+		$("#new-contact-div").removeClass("hide");
 		$("#cur-contact-div").removeClass("active in");
 		$("#new-contact-div").addClass("active in");
 		$("#list-cur-contact").removeClass("active");

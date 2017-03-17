@@ -10,6 +10,8 @@
 	<!-- Local JavaScript Link -->
 	<script type="text/javascript" src="assets/javascript/app.js" ></script>
 	
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 <!-- 	Reset CSS Link Will Go Here
 	??????????????????????????????????????????? -->
 
@@ -78,114 +80,127 @@
 		</div>
 	</div>
 
-	<div>
-		<button class="btn btn-default btnLogOut hide" id="btnLogOut">Log Out</button>
+
+	<div class="header">
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		    <div class="navbar-header hello-msg">
+		      	<h3 id="hello-msg">Hello!</h3>
+		    </div>
+		    <div class="navbar navbar-right">
+				<button class="btn btn-default btnLogOut hide" id="btnLogOut">Log Out</button>
+			</div>
+		  </div>
+		</nav>
 	</div>
 
 
 	<div class="container hide" id="main-cont">
 		<div class="row row-title">
-			<header class="title">
-				<nav>
-					<h1>See You There!</h1>
-				</nav>	
-			</header>
+			<h1 class="main-title">See you there.</h1>
 		</div>
 
-		<div class="row row-perm">
-			<div class="col col-lg-3 col-perm when-div" id="when-div">
-				<h3>When?</h3>
-				<div class="row when-body">
-					<div class="col-md-12">
-						<div class="tab-content row">
-							<div class="col-md-12 upcoming-div " id="upcoming-div">
-								<div class="row">
-									<h4>Upcoming Events</h4>
-									<div class="upcoming-here" id="upcoming-here">
-										<table class='table upcoming-Table' id="upcoming-Table">
-											<th>Event Name</th>
-											<th>Location</th>
-											<th>Date</th>
-											<th>Time</th>
-											<tbody class="tbody upcoming-Tbody" id="upcoming-Tbody">
+		<div class="row row-perm row-perm-top">
+			<div class="col col-lg-6 col-perm when-div" id="when-div">
+				<div class="div-perm-inner panel panel-default">
+					<div class="row panel-heading perm-heading when-perm-title">
+						<h2 class="small-h2">Upcoming Events</h2>
+					</div>
+					<div class="row perm-body when-body panel-body">
+						<div class="col-md-12 upcoming-div " id="upcoming-div">
+							<div class="upcoming-here" id="upcoming-here">
+								<table class='table upcoming-Table' id="upcoming-Table">
+									<th>Event Name</th>
+									<th>Location</th>
+									<th>Date</th>
+									<th>Time</th>
+									<tbody class="tbody upcoming-Tbody" id="upcoming-Tbody">
+									</tbody>
+								</table>
+							</div>
+							<div class= "newButtonGoHere" id="newButtonGoHere">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col col-lg-6 col-perm who-div" id="who-div">
+				<div class="div-perm-inner div-who-inner panel panel-default">
+					<div class="row perm-title panel-heading who-perm-title">
+						<div class="col-md-6">
+							<h2 class="small-h2">Contact List</h2>
+						</div>
+						<div class="col-md-6 col-contact-tabs">
+							<div class="row">
+								<ul class="nav nav-tabs row list-who">
+									<li role="presentation" class="active" id="list-cur-contact"><a class="cur-contact-tab" id="cur-contact-tab" data-toggle="tab">Current Contacts</a></li>
+									<li role="presentation" class="" id="list-new-contact"><a class="new-contact-tab" id="new-contact-tab" data-toggle="tab" >New Contact</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="row perm-body who-body panel-body">
+							<div class="row">
+								<div class="col-md-12 event-pane tab-pane active in fade cur-contact-div " id="cur-contact-div">
+									<div class="row exContactTitle" id="exContactTitle">
+										<h3>Contact List:</h3>
+									</div>
+									<div class="row exContactForm" id="exContactForm">
+										<table class='table exContactTable' id="exContactTable">
+											<th>First Name</th>
+											<th>Last Name</th>
+											<th>Email</th>
+											<th>Phone</th>
+											<tbody class="tbody exContactTbody" id="exContactTbody">
 											</tbody>
 										</table>
 									</div>
-									<div class= "newButtonGoHere" id="newButtonGoHere">
+								</div>
+								<div class="col-md-12 event-pane tab-pane fade hide new-contact-div" id="new-contact-div">
+									<div class="row new-contact-title" id="new-contact-title">
+										<h3>Add New Contact:</h3>
 									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="col col-lg-6 col-perm calendar-div" id="calendar-div">
-				<div class="row">
-					<h4>Calendar</h4>
-					<div class="container">
-						<div class="myCal cal1 row" id="myCal">
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<div class="col col-lg-3 col-perm who-div" id="who-div">
-				<h3>Who?</h3>
-				<div class="row who-body">
-					<div class="col-md-12">
-						<div class="row">
-						<ul class="nav nav-tabs row list-who">
-							<li role="presentation" class="active" id="list-cur-contact"><a class="cur-contact-tab" id="cur-contact-tab" data-toggle="tab">Current Contacts</a></li>
-
-							<li role="presentation" class="" id="list-new-contact"><a class="new-contact-tab" id="new-contact-tab" data-toggle="tab" >New Contact</a></li>
-						</ul>
-						</div>
-						<div class="row">
-							<div class="col-md-12 event-pane tab-pane fade in active cur-contact-div " id="cur-contact-div">
-								<div class="row exContactTitle" id="exContactTitle">
-									<h3>Contact List:</h3>
-								</div>
-
-								<div class="row exContactForm" id="exContactForm">
-									<table class='table exContactTable' id="exContactTable">
-										<th>First Name</th>
-										<th>Last Name</th>
-										<th>Email</th>
-										<th>Phone</th>
-										<tbody class="tbody exContactTbody" id="exContactTbody">
-										</tbody>
-									</table>
-								</div>
-							</div>
-
-							<div class="col-md-12 event-pane tab-pane fade new-contact-div" id="new-contact-div">	
-								<div class="row newContactTitle" id="newContactTitle">
-									<h3>Add New Contact:</h3>
-								</div>
-								<div class="row newContactForm" id="newContactForm">
-									<form class= id="contact-form" enctype="text/plain" action="">
-										<div class="row">
-											<label class="first-name-cont-label" id="first-name-cont-label">First Name:</label><br>
-											<input type="text" value="" name="first-name-cont" placeholder="Bob" class="input" id="first-name-cont-input"><br>
-										</div>
-										<div class="row">
-											<label class="last-name-cont-label" id="last-name-cont-label">Last Name:</label><br>
-											<input type="text" value="" name="last-name-cont" placeholder="Smith" class="input" id="last-name-cont-input"><br>
+									<div class="row new-contact-form" id="new-contact-form">
+										<form class= id="contact-form" enctype="text/plain" action="">
+											<div class="row">
+												<label class="first-name-cont-label" id="first-name-cont-label">First Name:</label><br>
+												<input type="text" value="" name="first-name-cont" placeholder="Bob" class="input" id="first-name-cont-input"><br>
 											</div>
-										<div class="row">
-											<label class="email-cont-label" id="email-cont-label">Email:</label><br>
-											<input type="text" value="" name="email" placeholder="Bob@Example.com" class="input" id="email-cont-input"><br>
+											<div class="row">
+												<label class="last-name-cont-label" id="last-name-cont-label">Last Name:</label><br>
+												<input type="text" value="" name="last-name-cont" placeholder="Smith" class="input" id="last-name-cont-input"><br>
+												</div>
+											<div class="row">
+												<label class="email-cont-label" id="email-cont-label">Email:</label><br>
+												<input type="text" value="" name="email" placeholder="Bob@Example.com" class="input" id="email-cont-input"><br>
+											</div>
+											<div class="row">
+												<label class="phone-cont-label" id="phone-cont-label">Phone:</label><br>
+												<input type="text" value="" name="phone" placeholder="512-555-1234" class="input" id="phone-cont-input"><br>
+											</div>
+										</form>
+										<div>
+											<button class="btn btn-success btnNewCont" id="btnNewCont">Create</button>
 										</div>
-										<div class="row">
-											<label class="phone-cont-label" id="phone-cont-label">Phone:</label><br>
-											<input type="text" value="" name="phone" placeholder="512-555-1234" class="input" id="phone-cont-input"><br>
-										</div>
-									</form>
-									<div>
-										<button class="btn btn-success btnNewCont" id="btnNewCont">Create</button>
 									</div>
 								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+
+		<div class="row row-perm row-perm-bottom">
+			<div class="col col-lg-12 col-perm calendar-div panel panel-default" id="calendar-div">
+				<div class="div-perm-inner div-cal-inner">
+					<div class="row perm-title panel-heading">
+						<h2>Calendar</h2>
+					</div>
+					<div class="row perm-body cal-body panel-body">
+						<div class="container">
+							<div class="myCal cal1 row" id="myCal">
 							</div>
 						</div>
 					</div>
@@ -194,10 +209,8 @@
 		</div>
 
 		<div class="question-row new-event-title">
-			<h3>Find your New event</h3>
+			<h2>Find your next event</h2>
 		</div>
-
-		
 
 		<div class="row question-row where-box">
 			<div class="col col-md-12 panel panel-default">
@@ -230,7 +243,7 @@
 					<div class="col-lg-12">
 						<div class="panel panel-default">
 							<div class="panel-heading">
-								<h3 class="panel-title">16 Day Weather Forecast</h3>
+								<h3 class="panel-title">2 Week Weather Forecast</h3>
 							</div>
 							<div class="panel-body" style="overflow-x:auto;">
 								<table id="weatherForecast" class="table">
@@ -250,8 +263,6 @@
 										<th id="after12Day"></th>
 										<th id="after13Day"></th>
 										<th id="after14Day"></th>
-										<th id="after15Day"></th>
-										<th id="after16Day"></th>
 									 </tr>
 								</table>
 							</div>
@@ -269,7 +280,7 @@
 					</div>
 					<div class="panel-body" style="overflow-x:auto;">
 						<div class="row">
-							<div class="col-md-9">
+							<div class="col-md-12">
 								<table id="placeInformation" class="table">
 									<tr>
 										<th>Name</th>
@@ -280,18 +291,17 @@
 									</tr>
 								</table>
 							</div>
-							<div class="col-md-3">
-								<div id="newLocButtonHere">
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-6 right-results-col create-div " id="create-div">
-				<div class="row">
-					<div class="new-event-div col-md-5" id="new-event-div">
-						<h4>Create Event</h4>
+
+			<div class="col-md-6 right-results-col new-event-div col-md-5" id="new-event-div">
+				<div class=" panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">Create Event</h4>
+					</div>
+					<div class="panel-body">
 						<form class= id="new-event-form" enctype="text/plain" action="">
 
 							<div class="row">

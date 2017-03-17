@@ -47,12 +47,6 @@
     date.setDate(date.getDate() + 1)
      forecastDate = date.getMonth() + 1 + "/" + date.getDate();
     $("#after14Day").append(forecastDate);
-    date.setDate(date.getDate() + 1)
-     forecastDate = date.getMonth() + 1 + "/" + date.getDate();
-    $("#after15Day").append(forecastDate);
-    date.setDate(date.getDate() + 1)
-     forecastDate = date.getMonth() + 1 + "/" + date.getDate();
-    $("#after16Day").append(forecastDate);
 
      
 
@@ -263,7 +257,7 @@
     function getWeather(latitude,longitude) {
       if(latitude != '' && longitude != '') {
         //$("#weather").val("Retrieving weather...");                   // write temporary response while we get the weather
-        $.getJSON( "http://api.openweathermap.org/data/2.5/forecast/daily?lat="+latitude+"&lon="+longitude+"&cnt=16&units=imperial&APPID=ba0f308ed591224086f33b427b689c9b", function(data) { // add '&units=imperial' to get U.S. measurements
+        $.getJSON( "http://api.openweathermap.org/data/2.5/forecast/daily?lat="+latitude+"&lon="+longitude+"&cnt=14&units=imperial&APPID=ba0f308ed591224086f33b427b689c9b", function(data) { // add '&units=imperial' to get U.S. measurements
           console.log(data);
           
           var weatherResults = "<tr><td><b>Temp:</b></td>";
