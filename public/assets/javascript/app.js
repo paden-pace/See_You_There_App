@@ -36,11 +36,16 @@ $(document).ready(function(){
 		});
 	});
 
-	//Registration Button will show Sign Up Div
-	$("#btnRegister").on("click", function(){
-		$("#register-div").removeClass("hide");
-		$("#log-in-div").addClass("hide");
-	});
+	// //Registration Button will show Sign Up Div
+	// $("#btnRegister").on("click", function(){
+	// 	$("#register-div").removeClass("hide");
+	// 	$("#log-in-div").addClass("hide");
+	// });
+
+	// $("#btn-open-log-in").on('click', function() {
+	// 	$("#register-div").addClass("hide");
+	// 	$("#log-in-div").removeClass("hide");
+	// });
 
 	// Sign Up Button 
 	$("#btnSignUp").on("click", function(snap){
@@ -91,6 +96,7 @@ $(document).ready(function(){
 					var errorCode = error.code;
 					var errorMessage = error.message;
 				});
+				location.reload(true);
 			});
 
 
