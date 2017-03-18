@@ -34,52 +34,81 @@
 
 <body background="assets/css/austin_skyline_night.jpeg">
 
-	<div class="container" id="log-in-cont">
-		<div>
-			<div class="log-in-div" id="log-in-div">
-				<form id="log-in-form" enctype="text/plain" action="">
-					<div class="row">
-						<label class="email-label" id="email-label">Email:</label><br>
-						<input type="text" value="" name="email" placeholder="Bob@Example.com" class="input" id="email-input"><br>
-					 </div>
-					 <div class="row">
-						<label class="password-label" id="password-label">Password:</label><br>
-						<input type="text" value="" name="password" placeholder="password#1" class="box" id="password-input"><br>
-					</div>
-				</form>
-				<div>
-					<button class="btn btn-primary btnLogIn" id="btnLogIn">Log In</button>
-				</div>
-				<div>
-					<button class="btn btn-default btnSignUp" id="btnRegister">Register</button>
-				</div>
-			</div>
-			<div class="hide register-div" id="register-div">
-				<form class= id="register-form" enctype="text/plain" action="">
-					<div class="row">
-						<label class="first-name-label" id="first-name-label">First Name:</label><br>
-						<input type="text" value="" name="first-name" placeholder="Bob" class="input" id="new-first-name-input"><br>
-					 </div>
-					 <div class="row">
-						<label class="last-name-label" id="last-name-label">Last Name:</label><br>
-						<input type="text" value="" name="last-name" placeholder="Smith" class="input" id="new-last-name-input"><br>
-					 </div>
-					<div class="row">
-						<label class="email-label" id="email-label">Email:</label><br>
-						<input type="text" value="" name="email" placeholder="Bob@Example.com" class="input" id="new-email-input"><br>
-					 </div>
-					 <div class="row">
-						<label class="password-label" id="password-label">Password:</label><br>
-						<input type="text" value="" name="password" placeholder="password#1" class="box" id="new-password-input"><br>
-					</div>
-				</form>
-				<div>
-					<button class="btn btn-success btnSignUp" id="btnSignUp">Sign Up</button>
-				</div>
-			</div>
 
+
+	<div class="container" id="log-in-cont">
+		<div class="log-in-div" id="log-in-div">
+			<div class="row row-title">
+				<h1 class="main-title">See you there.</h1>
+			</div>
+			<div class="row under-title-row">
+				<div class="col-lg-6 col-centered">
+					<div class="log-in-panel-outter">
+						<div class="panel-default panel log-in-panel">
+							<div class="row panel-heading log-in-panel-heading">
+								<h2 class="small-h2">Log In</h2>
+							</div>
+							<div class="row panel-body log-in-panel-body">
+								<form id="log-in-form" enctype="text/plain" action="">
+									<div class="row log-in-row">
+										<label class="email-label" id="email-label">Email:</label><br>
+										<input type="text" value="" name="email" placeholder="Bob@Example.com" class="input" id="email-input"><br>
+									 </div>
+									 <div class="row log-in-row">
+										<label class="password-label" id="password-label">Password:</label><br>
+										<input type="text" value="" name="password" placeholder="password#1" class="box" id="password-input"><br>
+									</div>
+								</form>
+								<div>
+									<button class="btn btn-primary btnLogIn log-in-button" id="btnLogIn">Log In</button>
+								</div>
+<!-- 								<div>
+									<button class="btn btn-default btnSignUp log-in-button" id="btnRegister">Register</button>
+								</div> -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-centered">
+					<div class="log-in-panel-outter">
+						<div class="panel-default panel log-in-panel">
+							<div class="row panel-heading log-in-panel-heading">
+								<h2 class="small-h2">Register</h2>
+							</div>
+							<div class="row panel-body log-in-panel-body">
+								<form class= id="register-form" enctype="text/plain" action="">
+									<div class="row log-in-row">
+										<label class="first-name-label" id="first-name-label">First Name:</label><br>
+										<input type="text" value="" name="first-name" placeholder="Bob" class="input" id="new-first-name-input"><br>
+									 </div>
+									 <div class="row log-in-row">
+										<label class="last-name-label" id="last-name-label">Last Name:</label><br>
+										<input type="text" value="" name="last-name" placeholder="Smith" class="input" id="new-last-name-input"><br>
+									 </div>
+									<div class="row log-in-row">
+										<label class="email-label" id="email-label">Email:</label><br>
+										<input type="text" value="" name="email" placeholder="Bob@Example.com" class="input" id="new-email-input"><br>
+									 </div>
+									 <div class="row log-in-row">
+										<label class="password-label" id="password-label">Password:</label><br>
+										<input type="text" value="" name="password" placeholder="password#1" class="box" id="new-password-input"><br>
+									</div>
+								</form>
+								<div>
+									<button class="btn btn-success btnSignUp log-in-button" id="btnSignUp">Sign Up</button>
+								</div>
+<!-- 								<div>
+									<button class="btn btn-default btn-open-log-in log-in-button" id="btn-open-log-in">Log In</button>
+								</div> -->
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
+
 
 	<div class="container hide" id="main-cont">
 		<div class="header">
@@ -199,7 +228,8 @@
 						<h2 class="small-h2">Calendar</h2>
 					</div>
 					<div class="row perm-body cal-body panel-body">
-						<div class="container">
+						<!-- <div class="col-md-1"></div> -->
+						<div class="container cal-container">
 							<div class="myCal cal1 row" id="myCal">
 							</div>
 						</div>

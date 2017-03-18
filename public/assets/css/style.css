@@ -45,9 +45,34 @@ body{
 	margin-bottom: 40px;
 }
 
-/*.col-perm {
-	padding: 25px;
-}*/
+.under-title-row {
+	margin-top: -50px;
+}
+
+.log-in-panel {
+	margin: 20px;
+}
+
+.log-in-panel-outter {
+	padding: 60px;
+}
+
+.log-in-panel-heading {
+	width: 100%;
+	margin-left: 0px
+}
+
+.log-in-panel-body {
+	padding: 0px 40px;
+}
+
+.log-in-row {
+	margin: 15px auto;
+}
+
+.log-in-button {
+	margin: 15px auto;
+}
 
 .when-div {
 	height: 100%;
