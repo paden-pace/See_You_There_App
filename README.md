@@ -1,16 +1,16 @@
 # group-project-1
-## Hole in the market -P
+## Missing item in the market -P
  Origin Story of Idea
  Too many options deciding where to eat
  Organizing your events Automatically
  Choosing location vote
  
- ## Addressing the hole -F
+ ## Addressing the issue -F
  limits options to 5 places
  chose a specific location 
  organize the upcoming event with schedule/calendar
  
- ## Steps to address the hole -T
+ ## Steps to address the issue -T
  What? deciding what to do (pizza, coffee, etc.)
  Where? selecting one specific area of town with the map
  When? creating an event / add to cal
