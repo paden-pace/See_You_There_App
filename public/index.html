@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <title>See You There</title>
-      <meta charset="utf-8">
-      <!-- JQuery Link -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-      <!-- Local JavaScript Link -->
-      <script type="text/javascript" src="assets/javascript/app.js" ></script>
-      <!-- Google Fonts -->
-      <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-      <!-- 	Reset CSS Link Will Go Here
-         ??????????????????????????????????????????? -->
-      <!-- Calendar CSS -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-      <link rel="stylesheet" href="assets/css/clndr-default.css">
-      <!-- Bootstrap Link -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-      <!-- Firebase link -->
-      <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
-      <!-- Local CSS Link -->
-      <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-   </head>
+		<head>
+			<title>See You There</title>
+			<meta charset="utf-8">
+			<!-- JQuery Link -->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+			<!-- Local JavaScript Link -->
+			<script type="text/javascript" src="assets/javascript/app.js" ></script>
+			<!-- Google Fonts -->
+			<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+			<!-- 	Reset CSS Link Will Go Here
+					??????????????????????????????????????????? -->
+			<!-- Calendar CSS -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+			<link rel="stylesheet" href="assets/css/clndr-default.css">
+			<!-- Bootstrap Link -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+			<!-- Firebase link -->
+			<script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
+			<!-- Local CSS Link -->
+			<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		</head>
 
 
 
@@ -30,353 +30,331 @@
 
 
 
-   <body background="assets/css/austin_skyline_night.jpeg">
+		<body background="assets/css/austin_skyline_night.jpeg">
 
 
 
-   <div class="container" id="log-in-cont">
-      <div class="log-in-div" id="log-in-div">
-         <div class="row row-title">
-            <h1 class="main-title">See you there.</h1>
-         </div>
-         <div class="row under-title-row">
-            <div class="col-lg-6 col-centered">
-               <div class="log-in-panel-outter">
-                  <div class="panel-default panel log-in-panel">
-                     <div class="row panel-heading log-in-panel-heading">
-                        <h2 class="small-h2">Log In</h2>
-                     </div>
-                     <div class="row panel-body log-in-panel-body">
-                        <form id="log-in-form" enctype="text/plain" action="">
-                           <div class="row log-in-row">
-                              <label class="email-label" id="email-label">Email:</label><br>
-                              <input type="text" value="" name="email" placeholder="Bob@Example.com" class="input" id="email-input"><br>
-                            </div>
-                            <div class="row log-in-row">
-                              <label class="password-label" id="password-label">Password:</label><br>
-                              <input type="text" value="" name="password" placeholder="password#1" class="box" id="password-input"><br>
-                           </div>
-                        </form>
-                        <div>
-                           <button class="btn btn-primary btnLogIn log-in-button" id="btnLogIn">Log In</button>
-                        </div>
-<!--                       <div>
-                           <button class="btn btn-default btnSignUp log-in-button" id="btnRegister">Register</button>
-                        </div> -->
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="col-lg-6 col-centered">
-               <div class="log-in-panel-outter">
-                  <div class="panel-default panel log-in-panel">
-                     <div class="row panel-heading log-in-panel-heading">
-                        <h2 class="small-h2">Register</h2>
-                     </div>
-                     <div class="row panel-body log-in-panel-body">
-                        <form class= id="register-form" enctype="text/plain" action="">
-                           <div class="row log-in-row">
-                              <label class="first-name-label" id="first-name-label">First Name:</label><br>
-                              <input type="text" value="" name="first-name" placeholder="Bob" class="input" id="new-first-name-input"><br>
-                            </div>
-                            <div class="row log-in-row">
-                              <label class="last-name-label" id="last-name-label">Last Name:</label><br>
-                              <input type="text" value="" name="last-name" placeholder="Smith" class="input" id="new-last-name-input"><br>
-                            </div>
-                           <div class="row log-in-row">
-                              <label class="email-label" id="email-label">Email:</label><br>
-                              <input type="text" value="" name="email" placeholder="Bob@Example.com" class="input" id="new-email-input"><br>
-                            </div>
-                            <div class="row log-in-row">
-                              <label class="password-label" id="password-label">Password:</label><br>
-                              <input type="text" value="" name="password" placeholder="password#1" class="box" id="new-password-input"><br>
-                           </div>
-                        </form>
-                        <div>
-                           <button class="btn btn-success btnSignUp log-in-button" id="btnSignUp">Sign Up</button>
-                        </div>
-<!--                       <div>
-                           <button class="btn btn-default btn-open-log-in log-in-button" id="btn-open-log-in">Log In</button>
-                        </div> -->
-
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
+		<div class="container" id="log-in-cont">
+			<div class="log-in-div" id="log-in-div">
+					<div class="row row-title">
+						<h1 class="main-title">See you there.</h1>
+					</div>
+					<div class="row under-title-row">
+						<div class="col-lg-6 col-centered">
+								<div class="log-in-panel-outter">
+									<div class="panel-default panel log-in-panel">
+											<div class="row panel-heading log-in-panel-heading">
+												<h2 class="small-h2">Log In</h2>
+											</div>
+											<div class="row panel-body log-in-panel-body">
+												<form id="log-in-form" enctype="text/plain" action="">
+														<div class="row log-in-row">
+															<label class="email-label" id="email-label">Email:</label><br>
+															<input type="text" value="" name="email" placeholder="Bob@Example.com" class="input" id="email-input"><br>
+														</div>
+														<div class="row log-in-row">
+															<label class="password-label" id="password-label">Password:</label><br>
+															<input type="password" value="" name="password" placeholder="password#1" class="box" id="password-input"><br>
+														</div>
+												</form>
+												<div>
+														<button class="btn btn-primary btnLogIn log-in-button" id="btnLogIn">Log In</button>
+												</div>
+											</div>
+									</div>
+								</div>
+						</div>
+						<div class="col-lg-6 col-centered">
+								<div class="log-in-panel-outter">
+									<div class="panel-default panel log-in-panel">
+											<div class="row panel-heading log-in-panel-heading">
+												<h2 class="small-h2">Register</h2>
+											</div>
+											<div class="row panel-body log-in-panel-body">
+												<form class= id="register-form" enctype="text/plain" action="">
+														<div class="row log-in-row">
+															<label class="first-name-label" id="first-name-label">First Name:</label><br>
+															<input type="text" value="" name="first-name" placeholder="Bob" class="input" id="new-first-name-input"><br>
+														</div>
+														<div class="row log-in-row">
+															<label class="last-name-label" id="last-name-label">Last Name:</label><br>
+															<input type="text" value="" name="last-name" placeholder="Smith" class="input" id="new-last-name-input"><br>
+														</div>
+														<div class="row log-in-row">
+															<label class="email-label" id="email-label">Email:</label><br>
+															<input type="text" value="" name="email" placeholder="Bob@Example.com" class="input" id="new-email-input"><br>
+														</div>
+														<div class="row log-in-row">
+															<label class="password-label" id="password-label">Password:</label><br>
+															<input type="text" value="" name="password" placeholder="password#1" class="box" id="new-password-input"><br>
+														</div>
+												</form>
+												<div>
+														<button class="btn btn-success btnSignUp log-in-button" id="btnSignUp">Sign Up</button>
+												</div>
+											</div>
+									</div>
+								</div>
+						</div>
+					</div>
+			</div>
+		</div>
 
 
 
 
 
-      <div class="header">
-         <nav class="navbar navbar-default">
-            <div class="container-fluid">
-               <div class="navbar-header hello-msg">
-                  <h3 id="hello-msg">Hello!</h3>
-               </div>
-               <div class="navbar navbar-right">
-                  <button class="btn btn-default btnLogOut hide" id="btnLogOut">Log Out</button>
-               </div>
-            </div>
-         </nav>
-      </div>
+			
 
+		<div class="container hide" id="main-cont">
 
+			<div class="header">
+				<nav class="navbar navbar-default">
+					<div class="container-fluid">
+						<div class="navbar-header hello-msg">
+								<h3 id="hello-msg">Hello!</h3>
+						</div>
+						<div class="navbar navbar-right">
+								<button class="btn btn-default btnLogOut hide" id="btnLogOut">Log Out</button>
+						</div>
+					</div>
+				</nav>
+			</div>
 
+			<div class="row row-title">
+				<h1 class="main-title">See you there.</h1>
+			</div>
 
+			<div class="row row-perm row-perm-top">
+				<div class="col col-lg-6 col-perm when-div" id="when-div">
+						<div class="div-perm-inner panel panel-default">
+							<div class="row panel-heading perm-heading when-perm-title">
+									<h2 class="small-h2">Upcoming Events</h2>
+							</div>
+							<div class="row perm-body when-body panel-body">
+									<div class="col-md-12 upcoming-div " id="upcoming-div">
+										<div class="upcoming-here" id="upcoming-here">
+												<table class='table upcoming-Table' id="upcoming-Table">
+													<th>Event Name</th>
+													<th>Location</th>
+													<th>Date</th>
+													<th>Time</th>
+													<tbody class="tbody upcoming-Tbody" id="upcoming-Tbody">
+													</tbody>
+												</table>
+										</div>
+										<div class= "newButtonGoHere" id="newButtonGoHere">
+										</div>
+									</div>
+							</div>
+						</div>
+				</div>
+				<div class="col col-lg-6 col-perm who-div" id="who-div">
+					<div class="div-perm-inner div-who-inner panel panel-default">
+						<div class="row perm-title panel-heading who-perm-title">
+							<div class="col-md-6">
+								<h2 class="small-h2">Contact List</h2>
+							</div>
+							<div class="col-md-6 col-contact-tabs">
+								<div class="row">
+										<ul class="nav nav-tabs row list-who">
+											<li role="presentation" class="active" id="list-cur-contact"><a class="cur-contact-tab" id="cur-contact-tab" data-toggle="tab">Current Contacts</a></li>
+											<li role="presentation" class="" id="list-new-contact"><a class="new-contact-tab" id="new-contact-tab" data-toggle="tab" >New Contact</a></li>
+										</ul>
+								</div>
+							</div>
+						</div>
+						<div class="row perm-body who-body panel-body">
+							<div class="row">
+								<div class="col-md-12 event-pane tab-pane active in fade cur-contact-div " id="cur-contact-div">
+									<div class="row exContactTitle" id="exContactTitle">
+										<h3>Contact List:</h3>
+									</div>
+									<div class="row exContactForm" id="exContactForm">
+										<table class='table exContactTable' id="exContactTable">
+												<th>First Name</th>
+												<th>Last Name</th>
+												<th>Email</th>
+												<th>Phone</th>
+												<tbody class="tbody exContactTbody" id="exContactTbody">
+												</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="col-md-12 event-pane tab-pane fade hide new-contact-div" id="new-contact-div">
+									<div class="row new-contact-title" id="new-contact-title">
+										<h3>Add New Contact:</h3>
+									</div>
+									<div class="row new-contact-form" id="new-contact-form">
+										<form class= id="contact-form" enctype="text/plain" action="">
+												<div class="row">
+													<label class="first-name-cont-label" id="first-name-cont-label">First Name:</label><br>
+													<input type="text" value="" name="first-name-cont" placeholder="Bob" class="input" id="first-name-cont-input"><br>
+												</div>
+												<div class="row">
+													<label class="last-name-cont-label" id="last-name-cont-label">Last Name:</label><br>
+													<input type="text" value="" name="last-name-cont" placeholder="Smith" class="input" id="last-name-cont-input"><br>
+												</div>
+												<div class="row">
+													<label class="email-cont-label" id="email-cont-label">Email:</label><br>
+													<input type="text" value="" name="email" placeholder="Bob@Example.com" class="input" id="email-cont-input"><br>
+												</div>
+												<div class="row">
+													<label class="phone-cont-label" id="phone-cont-label">Phone:</label><br>
+													<input type="text" value="" name="phone" placeholder="512-555-1234" class="input" id="phone-cont-input"><br>
+												</div>
+										</form>
+										<div>
+												<button class="btn btn-success btnNewCont" id="btnNewCont">Create</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-perm row-perm-bottom">
+				<div class="col col-lg-12 calendar-div" id="calendar-div">
+					<div class="div-perm-inner div-cal-inner panel panel-default">
+						<div class="row perm-title panel-heading cal-perm-title">
+							<h2 class="small-h2">Calendar</h2>
+						</div>
+						<div class="row perm-body cal-body panel-body">
+							<div class="col-md-2"></div>
+							<div class="col-cal col-md-8 col-centered">
+								<div class="container">
+									<div class="myCal cal1 row" id="myCal">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row question-row where-box">
+				<div class="col col-md-12 ">
+					<div class="div-map-inner panel panel-default">
+						<div class="row panel-heading">
+							<h2 class="small-h2">What do you feel like doing?</h2>	
+						</div>
+						<div class="row">
+								<div class="panel-body">
+									<div style="width: 15%; margin-bottom: 10px">
+											<select id="interest" class="form-control"  >
+												<option>Pizza</option>
+												<option>Coffee</option>
+												<option>Restaurant</option>
+												<option>Bakery</option>
+												<option>Bar</option>
+												<option>Park</option>
+												<option>Movie Theater</option>
+												<option>Museum</option>
+												<option>Night Club</option>
+											</select>
+									</div>
+									<input class="hide form-control" id="searchRadius" type="text" value="500" style="width: 15%; margin-bottom: 10px">
+									<div class="jumbotron" id="map" style="width: 100%; height: 450px">
+									</div>
+								</div>
+						</div>
+						<div class="row">
+								<div class="col-lg-12">
+									<div class="panel panel-default">
+											<div class="panel-heading">
+												<h3 class="panel-title">2 Week Weather Forecast</h3>
+											</div>
+											<div class="panel-body" style="overflow-x:auto;">
+												<table id="weatherForecast" class="table">
+														<tr>
+															<th></th>
+															<th id="after1Day"></th>
+															<th id="after2Day"></th>
+															<th id="after3Day"></th>
+															<th id="after4Day"></th>
+															<th id="after5Day"></th>
+															<th id="after6Day"></th>
+															<th id="after7Day"></th>
+															<th id="after8Day"></th>
+															<th id="after9Day"></th>
+															<th id="after10Day"></th>
+															<th id="after11Day"></th>
+															<th id="after12Day"></th>
+															<th id="after13Day"></th>
+															<th id="after14Day"></th>
+														</tr>
+												</table>
+											</div>
+									</div>
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+			<div class="row question-row results-box">
+					<div class="col-md-6 left-results-col places-div">
+						<div class="div-results-inner panel panel-default">
+								<div class="row panel-heading">
+									<h2 class="small-h2">Places</h2>
+								</div>
+								<div class="panel-body" style="overflow-x:auto;">
+									<div class="row">
+											<div class="col-md-12">
+												<table id="placeInformation" class="table">
+														<tr>
+															<th>Name</th>
+															<th>Cheap</th>
+															<th>Rating</th>
+															<th>Google Info</th>
+															<th>Website</th>
+														</tr>
+												</table>
+											</div>
+									</div>
+								</div>
+						</div>
+					</div>
 
+					<div class="col-md-6 right-results-col new-event-div col-md-5" id="new-event-div">
+						<div class="div-results-inner panel panel-default">
+							<div class="row panel-heading ">
+								<h2 class="small-h2">Create Event</h2>
+							</div>
+							<div class="panel-body">
+								<form class= id="new-event-form" enctype="text/plain" action="">
+									<div class="create-row">
+										<label class="event-name-label" id="event-name-label">Event Name:</label><br>
+										<input type="text" value="" name="event-name" placeholder="Jim's Party" class="input" id="event-name-input"><br>
+									</div>
+									<div class="create-row">
+										<label class="event-loc-label" id="event-loc-label">Event Location:</label><br>
+										<select id="event-loc-select" class="form-control">
+												<option>No Location</option>
+										</select>
+									</div>
+									<div class="create-row">
+										<label class="event-start-date-label" id="event-start-date-label">Event Start Date: (YYYY-MM-DD)</label><br>
+										<input type="text" value="" name="event-start-date" placeholder="2017-02-09" class="input" id="event-start-date-input"><br>
+									</div>
+									<div class="create-row">
+										<label class="event-start-time-label" id="event-start-time-label">Event Start Time: (Military Time)</label><br>
+										<input type="text" value="" name="event-start-time" placeholder="16:00:00" class="input" id="event-start-time-input"><br>
+									</div>
+								</form>
+								<button class="btn btn-success btnSignUp create-button" id="new-date-button">Create</button>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-
-      <div class="container hide" id="main-cont">
-         <div class="row row-title">
-            <h1 class="main-title">See you there.</h1>
-         </div>
-
-
-
-
-
-
-
-         <div class="row row-perm row-perm-top">
-            <div class="col col-lg-6 col-perm when-div" id="when-div">
-               <div class="div-perm-inner panel panel-default">
-                  <div class="row panel-heading perm-heading when-perm-title">
-                     <h2 class="small-h2">Upcoming Events</h2>
-                  </div>
-                  <div class="row perm-body when-body panel-body">
-                     <div class="col-md-12 upcoming-div " id="upcoming-div">
-                        <div class="upcoming-here" id="upcoming-here">
-                           <table class='table upcoming-Table' id="upcoming-Table">
-                              <th>Event Name</th>
-                              <th>Location</th>
-                              <th>Date</th>
-                              <th>Time</th>
-                              <tbody class="tbody upcoming-Tbody" id="upcoming-Tbody">
-                              </tbody>
-                           </table>
-                        </div>
-                        <div class= "newButtonGoHere" id="newButtonGoHere">
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="col col-lg-6 col-perm who-div" id="who-div">
-               <div class="div-perm-inner div-who-inner panel panel-default">
-                  <div class="row perm-title panel-heading who-perm-title">
-                     <div class="col-md-6">
-                        <h2 class="small-h2">Contact List</h2>
-                     </div>
-                     <div class="col-md-6 col-contact-tabs">
-                        <div class="row">
-                           <ul class="nav nav-tabs row list-who">
-                              <li role="presentation" class="active" id="list-cur-contact"><a class="cur-contact-tab" id="cur-contact-tab" data-toggle="tab">Current Contacts</a></li>
-                              <li role="presentation" class="" id="list-new-contact"><a class="new-contact-tab" id="new-contact-tab" data-toggle="tab" >New Contact</a></li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="row perm-body who-body panel-body">
-                     <div class="row">
-                        <div class="col-md-12 event-pane tab-pane active in fade cur-contact-div " id="cur-contact-div">
-                           <div class="row exContactTitle" id="exContactTitle">
-                              <h3>Contact List:</h3>
-                           </div>
-                           <div class="row exContactForm" id="exContactForm">
-                              <table class='table exContactTable' id="exContactTable">
-                                 <th>First Name</th>
-                                 <th>Last Name</th>
-                                 <th>Email</th>
-                                 <th>Phone</th>
-                                 <tbody class="tbody exContactTbody" id="exContactTbody">
-                                 </tbody>
-                              </table>
-                           </div>
-                        </div>
-                        <div class="col-md-12 event-pane tab-pane fade hide new-contact-div" id="new-contact-div">
-                           <div class="row new-contact-title" id="new-contact-title">
-                              <h3>Add New Contact:</h3>
-                           </div>
-                           <div class="row new-contact-form" id="new-contact-form">
-                              <form class= id="contact-form" enctype="text/plain" action="">
-                                 <div class="row">
-                                    <label class="first-name-cont-label" id="first-name-cont-label">First Name:</label><br>
-                                    <input type="text" value="" name="first-name-cont" placeholder="Bob" class="input" id="first-name-cont-input"><br>
-                                 </div>
-                                 <div class="row">
-                                    <label class="last-name-cont-label" id="last-name-cont-label">Last Name:</label><br>
-                                    <input type="text" value="" name="last-name-cont" placeholder="Smith" class="input" id="last-name-cont-input"><br>
-                                 </div>
-                                 <div class="row">
-                                    <label class="email-cont-label" id="email-cont-label">Email:</label><br>
-                                    <input type="text" value="" name="email" placeholder="Bob@Example.com" class="input" id="email-cont-input"><br>
-                                 </div>
-                                 <div class="row">
-                                    <label class="phone-cont-label" id="phone-cont-label">Phone:</label><br>
-                                    <input type="text" value="" name="phone" placeholder="512-555-1234" class="input" id="phone-cont-input"><br>
-                                 </div>
-                              </form>
-                              <div>
-                                 <button class="btn btn-success btnNewCont" id="btnNewCont">Create</button>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="row row-perm row-perm-bottom">
-         <div class="col col-lg-12 calendar-div panel panel-default" id="calendar-div">
-            <div class="div-perm-inner div-cal-inner">
-               <div class="row perm-title panel-heading">
-                  <h2>Calendar</h2>
-               </div>
-               <div class="row perm-body cal-body panel-body">
-                  <div class="container">
-                     <div class="myCal cal1 row" id="myCal">
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      r</div>
-      
-      <div class="row question-row where-box">
-         <div class="col col-md-12 panel panel-default">
-            <div class="row">
-               <div class="panel-heading">
-                  <h3 class="panel-title">What do you feel like doing today?</h3>
-               </div>
-            </div>
-            <div class="row">
-               <div class="panel-body">
-                  <div style="width: 15%; margin-bottom: 10px">
-                     <select id="interest" class="form-control"  >
-                        <option>Pizza</option>
-                        <option>Coffee</option>
-                        <option>Restaurant</option>
-                        <option>Bakery</option>
-                        <option>Bar</option>
-                        <option>Park</option>
-                        <option>Movie Theater</option>
-                        <option>Museum</option>
-                        <option>Night Club</option>
-                     </select>
-                  </div>
-                  <input class="form-control" id="searchRadius" type="text" value="500" style="width: 15%; margin-bottom: 10px">
-                  <div class="jumbotron" id="map" style="width: 100%; height: 450px">
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-lg-12">
-                  <div class="panel panel-default">
-                     <div class="panel-heading">
-                        <h3 class="panel-title">2 Week Weather Forecast</h3>
-                     </div>
-                     <div class="panel-body" style="overflow-x:auto;">
-                        <table id="weatherForecast" class="table">
-                           <tr>
-                              <th></th>
-                              <th id="after1Day"></th>
-                              <th id="after2Day"></th>
-                              <th id="after3Day"></th>
-                              <th id="after4Day"></th>
-                              <th id="after5Day"></th>
-                              <th id="after6Day"></th>
-                              <th id="after7Day"></th>
-                              <th id="after8Day"></th>
-                              <th id="after9Day"></th>
-                              <th id="after10Day"></th>
-                              <th id="after11Day"></th>
-                              <th id="after12Day"></th>
-                              <th id="after13Day"></th>
-                              <th id="after14Day"></th>
-                           </tr>
-                        </table>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="row question-row results-box">
-         <div class="col-md-6 left-results-col places-div">
-            <div class="panel panel-default">
-               <div class="panel-heading">
-                  <h3 class="panel-title">Places</h3>
-               </div>
-               <div class="panel-body" style="overflow-x:auto;">
-                  <div class="row">
-                     <div class="col-md-12">
-                        <table id="placeInformation" class="table">
-                           <tr>
-                              <th>Name</th>
-                              <th>Cheap</th>
-                              <th>Rating</th>
-                              <th>Google Info</th>
-                              <th>Website</th>
-                           </tr>
-                        </table>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-md-6 right-results-col new-event-div col-md-5" id="new-event-div">
-            <div class=" panel panel-default">
-               <div class="panel-heading ">
-                  <h3 class="panel-title create-title">Create Event</h3>
-               </div>
-               <div class="panel-body">
-                  <form class= id="new-event-form" enctype="text/plain" action="">
-                     <div class="row">
-                        <label class="event-name-label" id="event-name-label">Event Name:</label><br>
-                        <input type="text" value="" name="event-name" placeholder="Jim's Party" class="input" id="event-name-input"><br>
-                     </div>
-                     <div class="row">
-                        <label class="event-loc-label" id="event-loc-label">Event Location:</label><br>
-                        <select id="event-loc-select" class="form-control">
-                           <option>No Location</option>
-                        </select>
-                     </div>
-                     <div class="row">
-                        <label class="event-start-date-label" id="event-start-date-label">Event Start Date: (YYYY-MM-DD)</label><br>
-                        <input type="text" value="" name="event-start-date" placeholder="2017-02-09" class="input" id="event-start-date-input"><br>
-                     </div>
-                     <div class="row">
-                        <label class="event-start-time-label" id="event-start-time-label">Event Start Time: (Military Time)</label><br>
-                        <input type="text" value="" name="event-start-time" placeholder="16:00:00" class="input" id="event-start-time-input"><br>
-                     </div>
-                     <!-- 							<div class="row">
-                        <label class="event-end-date-label" id="event-end-date-label">Event End Date: (YYYY-MM-DD)</label><br>
-                        <input type="text" value="" name="event-end-date" placeholder="2017-02-09" class="input" id="event-end-date-input"><br>
-                        </div>
-                        
-                        <div class="row">
-                        <label class="event-end-time-label" id="event-end-time-label">Event End Time: (Military Time)</label><br>
-                        <input type="text" value="" name="event-end-time" placeholder="16:00:00" class="input" id="event-end-time-input"><br>
-                        </div> -->
-                  </form>
-                  <button class="btn btn-success btnSignUp" id="new-date-button">Create</button>
-               </div>
-            </div>
-         </div>
-      </div>
-      </div>
-      </div>
-      <script type="text/javascript" src="assets/javascript/api.js"></script>
-      <!-- Calendar JavaScript -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
-      <script src="assets/javascript/clndr-default.js"></script>
-      <script
-         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhPuUy4ApUrRco8HXpxS3oT3p6fDEN5eU&libraries=places,weather&callback=initMap"></script>
-   </body>
+			<script type="text/javascript" src="assets/javascript/api.js"></script>
+			<!-- Calendar JavaScript -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+			<script src="assets/javascript/clndr-default.js"></script>
+			<script
+					src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhPuUy4ApUrRco8HXpxS3oT3p6fDEN5eU&libraries=places,weather&callback=initMap"></script>
+		</body>

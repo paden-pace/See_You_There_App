@@ -100,13 +100,25 @@ body{
 .new-event-div{
 	margin-left:48px;
 }
-.places-div{
+
+/*.places-div{
 	margin-left:20px;
 	height:;
-
-}
+}*/
 
 .div-perm-inner {
+	margin: 10px;
+	padding: 15px 30px;
+	background-color: #ffffff;
+}
+
+.div-map-inner {
+	margin: 10px;
+	padding: 15px 30px;
+	background-color: #ffffff;
+}
+
+.div-results-inner {
 	margin: 10px;
 	padding: 15px 30px;
 	background-color: #ffffff;
@@ -207,9 +219,30 @@ body{
 	margin: 15px auto;
 }
 
+.delete-button {
+	margin: 5px;
+}
 
+.create-row {
+	margin: 15px auto;
+}
 
+.create-button {
+	margin: 15px auto;
+}
 
+.col-cal {
+	margin-left: auto;
+	margin-right: auto;
+	align-items: center;
+	text-align: center;
+}
 
+.navbar-right{
+	margin: 10px 0 0 0;
+}
 
+#hello-msg {
+	margin: 17px 0 0 0;
+}
 

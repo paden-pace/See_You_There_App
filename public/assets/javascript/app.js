@@ -84,6 +84,7 @@ $(document).ready(function(){
 			$("#btnLogOut").removeClass("hide");
 			$("#main-cont").removeClass("hide");
 			$("#log-in-cont").addClass("hide");
+			
 
 
 			//Log Out Button
@@ -282,113 +283,94 @@ $(document).ready(function(){
 			};
 		};
 
-
 		refreshCal ();
 
 
-			// New Contact Button Click
-			$("#btnNewCont").on("click", function(event) {
-				event.preventDefault();
-				console.log("cont clicked");
+		// New Contact Button Click
+		$("#btnNewCont").on("click", function(event) {
+			event.preventDefault();
+			console.log("cont clicked");
 
-				// Grab values from text boxes
-				firstCont = $("#first-name-cont-input").val().trim();
-				lastCont = $("#last-name-cont-input").val().trim();
-				emailCont = $("#email-cont-input").val().trim();
-				phoneCont = $("#phone-cont-input").val().trim();
+			// Grab values from text boxes
+			firstCont = $("#first-name-cont-input").val().trim();
+			lastCont = $("#last-name-cont-input").val().trim();
+			emailCont = $("#email-cont-input").val().trim();
+			phoneCont = $("#phone-cont-input").val().trim();
 
-				// Code for handling the push
-				database.ref('users/'+uid+'/contacts').push({
-					firstCont: firstCont,
-					lastCont: lastCont,
-					emailCont: emailCont,
-					phoneCont: phoneCont,
-					dateAdded: firebase.database.ServerValue.TIMESTAMP
-				});
+			// Code for handling the push
+			database.ref('users/'+uid+'/contacts').push({
+				firstCont: firstCont,
+				lastCont: lastCont,
+				emailCont: emailCont,
+				phoneCont: phoneCont,
+				dateAdded: firebase.database.ServerValue.TIMESTAMP
 			});
+		});
 
 
-			// Firebase watcher + initial loader HINT: .on("value")
-			database.ref('users/'+uid+'/contacts').on("child_added", function(snapshot) {
+		// Firebase watcher + initial loader HINT: .on("value")
+		database.ref('users/'+uid+'/contacts').on("child_added", function(snapshot) {
 
-				// storing the snapshot.val() in a variable for convenience
-				var snapValue = snapshot.val();
-				
-				// Getting an array of each key In the snapshot object
-				var snapValueArr = Object.keys(snapValue);
+			// storing the snapshot.val() in a variable for convenience
+			var snapValue = snapshot.val();
+			
+			// Getting an array of each key In the snapshot object
+			var snapValueArr = Object.keys(snapValue);
 
-				// Finding the last user's key
-				var lastIndex = snapValueArr.length - 1;
+			// Finding the last user's key
+			var lastIndex = snapValueArr.length - 1;
 
-				var lastKey = snapValueArr[lastIndex];
+			var lastKey = snapValueArr[lastIndex];
 
-				// Using the last user's key to access the last added user object
-				var lastObj = snapValue[lastKey]	
+			// Using the last user's key to access the last added user object
+			var lastObj = snapValue[lastKey]	
 
-			// 	// Handle the errors
-			}, function(errorObject) {
-				console.log("Errors handled: " + errorObject.code);
+		// 	// Handle the errors
+		}, function(errorObject) {
+			console.log("Errors handled: " + errorObject.code);
+		});
+
+
+
+		database.ref('users/'+uid+'/contacts').orderByChild("lastCont").on("child_added", function(snapshot) {
+			var markup = "<tr><td>" + snapshot.val().firstCont + "</td><td>" + snapshot.val().lastCont + "</td><td>" + snapshot.val().emailCont + "</td><td>" + snapshot.val().phoneCont + "</td></tr>";
+			$("#exContactTbody").append(markup);
+		});
+
+					$("#new-date-button").on("click", function(event) {
+					event.preventDefault();
+
+
+					// Grab values from text boxes
+					newName = $("#event-name-input").val().trim();
+					newLocation = $("#event-loc-select").val().trim();
+					newStartDate = $("#event-start-date-input").val().trim();
+					newStartTime = $("#event-start-time-input").val().trim();
+
+					// var newStart = (newStartDate + "T" + newStartTime);
+					// var newEnd = (newEndDate + "T" + newEndTime);
+
+					console.log(newName);
+					console.log(newLocation);
+					console.log(newStartDate);
+					console.log(newStartTime);
+
+					// newEvent = {
+					//      title: newName,
+					//      start: newStart,
+					//      end: newEnd
+					//  };
+
+					database.ref('users/'+uid+'/events').push({
+							title: newName,
+							location: newLocation,
+							start: newStartDate,
+							startTime: newStartTime,
+							dateAdded: firebase.database.ServerValue.TIMESTAMP
+					});
+
+
 			});
-
-
-
-			database.ref('users/'+uid+'/contacts').orderByChild("lastCont").on("child_added", function(snapshot) {
-
-			// CODE FOR ADDING CONTACTS AS CHECKLIST	
-				// $('</br>').prependTo('#new-contacts-here');
-				// $('<input/>', {
-				// 	id: snapshot.val().firstCont + "-input",
-				// 	class: 'checkbox-input',
-				// 	type: 'checkbox',
-				// 	value: snapshot.val().emailCont
-				// }).prependTo('#new-contacts-here');
-				// $('<label/>', {
-				// 	id: snapshot.val().firstCont + "-label",
-				// 	class: 'checkbox-label',
-				// 	for: snapshot.val().emailCont,
-				// 	value: snapshot.val().emailCont,
-				// 	text: snapshot.val().firstCont + " " + snapshot.val().lastCont
-				// }).prependTo('#new-contacts-here');
-
-
-				var markup = "<tr><td>" + snapshot.val().firstCont + "</td><td>" + snapshot.val().lastCont + "</td><td>" + snapshot.val().emailCont + "</td><td>" + snapshot.val().phoneCont + "</td></tr>";
-				$("#exContactTbody").append(markup);
-				});
-
-						$("#new-date-button").on("click", function(event) {
-						event.preventDefault();
-
-
-						// Grab values from text boxes
-						newName = $("#event-name-input").val().trim();
-						newLocation = $("#event-loc-select").val().trim();
-						newStartDate = $("#event-start-date-input").val().trim();
-						newStartTime = $("#event-start-time-input").val().trim();
-
-						// var newStart = (newStartDate + "T" + newStartTime);
-						// var newEnd = (newEndDate + "T" + newEndTime);
-
-						console.log(newName);
-						console.log(newLocation);
-						console.log(newStartDate);
-						console.log(newStartTime);
-
-						// newEvent = {
-						//      title: newName,
-						//      start: newStart,
-						//      end: newEnd
-						//  };
-
-						database.ref('users/'+uid+'/events').push({
-								title: newName,
-								location: newLocation,
-								start: newStartDate,
-								startTime: newStartTime,
-								dateAdded: firebase.database.ServerValue.TIMESTAMP
-						});
-
-
-				});
 
 				// Firebase watcher + initial loader HINT: .on("value")
 				database.ref('users/'+uid+'/events').on("child_added", function(snapshot) {
