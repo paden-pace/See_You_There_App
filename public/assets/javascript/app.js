@@ -3,21 +3,22 @@ var calendars = {};
 
 $(document).ready(function(){
 
-	// to show the JavaScript page is running
+	// to show the JavaScript page is attached
 	console.log("JS Attached");
 
-		// Initialize Firebase
-		var config = {
-		apiKey: "AIzaSyAOvuBjDloWxmel5DKtcKp2IpIjyPZDqp4",
-		authDomain: "groupproject-1-ftp.firebaseapp.com",
-		databaseURL: "https://groupproject-1-ftp.firebaseio.com",
-		storageBucket: "groupproject-1-ftp.appspot.com",
-		messagingSenderId: "355866249539"
-		};
-		firebase.initializeApp(config);
 
-		var database = firebase.database();
-		var ref = database.ref();
+	// Initialize Firebase
+	var config = {
+	apiKey: "AIzaSyAOvuBjDloWxmel5DKtcKp2IpIjyPZDqp4",
+	authDomain: "groupproject-1-ftp.firebaseapp.com",
+	databaseURL: "https://groupproject-1-ftp.firebaseio.com",
+	storageBucket: "groupproject-1-ftp.appspot.com",
+	messagingSenderId: "355866249539"
+	};
+	firebase.initializeApp(config);
+
+	var database = firebase.database();
+	var ref = database.ref();
 
 
 	// Log In Button
@@ -36,16 +37,6 @@ $(document).ready(function(){
 		});
 	});
 
-	// //Registration Button will show Sign Up Div
-	// $("#btnRegister").on("click", function(){
-	// 	$("#register-div").removeClass("hide");
-	// 	$("#log-in-div").addClass("hide");
-	// });
-
-	// $("#btn-open-log-in").on('click', function() {
-	// 	$("#register-div").addClass("hide");
-	// 	$("#log-in-div").removeClass("hide");
-	// });
 
 	// Sign Up Button 
 	$("#btnSignUp").on("click", function(snap){
@@ -113,58 +104,42 @@ $(document).ready(function(){
 	
 
 
-
-	function curContactClick () {
-		event.preventDefault();
-		$("#cur-contact-div").removeClass("hide");
-		$("#new-contact-div").addClass("hide");
-		$("#cur-contact-div").addClass("active in");
-		$("#new-contact-div").removeClass("active in");
-		$("#list-cur-contact").addClass("active");
-		$("#list-new-contact").removeClass("active");
-		console.log("function cur contact clicked.");
-	};
-
-	function newContactClick () {
-		event.preventDefault();
-		$("#cur-contact-div").addClass("hide");
-		$("#new-contact-div").removeClass("hide");
-		$("#cur-contact-div").removeClass("active in");
-		$("#new-contact-div").addClass("active in");
-		$("#list-cur-contact").removeClass("active");
-		$("#list-new-contact").addClass("active");
-		console.log("function new contact clicked.");
-	};
-
-	$("#cur-contact-tab").on('click', function(){
-		 curContactClick ();
-	});
-
-	$("#new-contact-tab").on('click', function(){
-		 newContactClick ();
-	});
+		// For toggling through the Contact tabs
+		function curContactClick () {
+			event.preventDefault();
+			$("#cur-contact-div").removeClass("hide");
+			$("#new-contact-div").addClass("hide");
+			$("#cur-contact-div").addClass("active in");
+			$("#new-contact-div").removeClass("active in");
+			$("#list-cur-contact").addClass("active");
+			$("#list-new-contact").removeClass("active");
+			console.log("function cur contact clicked.");
+		};
+		function newContactClick () {
+			event.preventDefault();
+			$("#cur-contact-div").addClass("hide");
+			$("#new-contact-div").removeClass("hide");
+			$("#cur-contact-div").removeClass("active in");
+			$("#new-contact-div").addClass("active in");
+			$("#list-cur-contact").removeClass("active");
+			$("#list-new-contact").addClass("active");
+			console.log("function new contact clicked.");
+		};
+		$("#cur-contact-tab").on('click', function(){
+			 curContactClick ();
+		});
+		$("#new-contact-tab").on('click', function(){
+			 newContactClick ();
+		});
 
 
 
 
 
-//------------------------------------------------------------
-//               Calendar JS
-//-------------------------------------------
+		//----------    Calendar JS  --------------------
 
 
-
-		console.info(
-				'Welcome to the CLNDR demo. Click around on the calendars and' +
-				'the console will log different events that fire.');
-
-		// Assuming you've got the appropriate language files,
-		// clndr will respect whatever moment's language is set to.
-		// moment.locale('ru');
-
-
-
-		// Here's some magic to make sure the dates are happening this month.
+		// assigning the current month
 		var thisMonth = moment().format('YYYY-MM');
 		// Events to load into calendar
 		var eventsArray = [];
@@ -177,7 +152,7 @@ $(document).ready(function(){
 		var numberOfEvents = 0;
 
 
-
+		// updating the calendar from adding Firebase events
 		function refreshCal () {
 			if(eventsArray.length == 0) {
 				console.log("trigger if : " + eventsArray);
@@ -325,153 +300,132 @@ $(document).ready(function(){
 			// Using the last user's key to access the last added user object
 			var lastObj = snapValue[lastKey]	
 
-		// 	// Handle the errors
+		// Handle the errors
 		}, function(errorObject) {
 			console.log("Errors handled: " + errorObject.code);
 		});
 
 
 
+		// Adding the new contact to the page
 		database.ref('users/'+uid+'/contacts').orderByChild("lastCont").on("child_added", function(snapshot) {
 			var markup = "<tr><td>" + snapshot.val().firstCont + "</td><td>" + snapshot.val().lastCont + "</td><td>" + snapshot.val().emailCont + "</td><td>" + snapshot.val().phoneCont + "</td></tr>";
 			$("#exContactTbody").append(markup);
 		});
 
-					$("#new-date-button").on("click", function(event) {
-					event.preventDefault();
 
+		$("#new-date-button").on("click", function(event) {
+		event.preventDefault();
 
-					// Grab values from text boxes
-					newName = $("#event-name-input").val().trim();
-					newLocation = $("#event-loc-select").val().trim();
-					newStartDate = $("#event-start-date-input").val().trim();
-					newStartTime = $("#event-start-time-input").val().trim();
+			// Grab values from text boxes
+			newName = $("#event-name-input").val().trim();
+			newLocation = $("#event-loc-select").val().trim();
+			newStartDate = $("#event-start-date-input").val().trim();
+			newStartTime = $("#event-start-time-input").val().trim();
 
-					// var newStart = (newStartDate + "T" + newStartTime);
-					// var newEnd = (newEndDate + "T" + newEndTime);
+			console.log(newName);
+			console.log(newLocation);
+			console.log(newStartDate);
+			console.log(newStartTime);
 
-					console.log(newName);
-					console.log(newLocation);
-					console.log(newStartDate);
-					console.log(newStartTime);
-
-					// newEvent = {
-					//      title: newName,
-					//      start: newStart,
-					//      end: newEnd
-					//  };
-
-					database.ref('users/'+uid+'/events').push({
-							title: newName,
-							location: newLocation,
-							start: newStartDate,
-							startTime: newStartTime,
-							dateAdded: firebase.database.ServerValue.TIMESTAMP
-					});
-
-
+			database.ref('users/'+uid+'/events').push({
+					title: newName,
+					location: newLocation,
+					start: newStartDate,
+					startTime: newStartTime,
+					dateAdded: firebase.database.ServerValue.TIMESTAMP
 			});
+		});
 
-				// Firebase watcher + initial loader HINT: .on("value")
-				database.ref('users/'+uid+'/events').on("child_added", function(snapshot) {
 
-						// storing the snapshot.val() in a variable for convenience
-						var snapValue = snapshot.val();
-						
-						// Getting an array of each key In the snapshot object
-						var snapValueArr = Object.keys(snapValue);
+		// Firebase watcher + initial loader HINT: .on("value")
+		database.ref('users/'+uid+'/events').on("child_added", function(snapshot) {
 
-						// Finding the last user's key
-						var lastIndex = snapValueArr.length - 1;
+			// storing the snapshot.val() in a variable for convenience
+			var snapValue = snapshot.val();
+			
+			// Getting an array of each key In the snapshot object
+			var snapValueArr = Object.keys(snapValue);
 
-						var lastKey = snapValueArr[lastIndex];
+			// Finding the last user's key
+			var lastIndex = snapValueArr.length - 1;
 
-						// Using the last user's key to access the last added user object
-						var lastObj = snapValue[lastKey]
+			var lastKey = snapValueArr[lastIndex];
 
-		
+			// Using the last user's key to access the last added user object
+			var lastObj = snapValue[lastKey]
 
-						// Handle the errors
-				}, function(errorObject) {
-						console.log("Errors handled: " + errorObject.code);
+					// Handle the errors
+		}, function(errorObject) {
+				console.log("Errors handled: " + errorObject.code);
+		});
+
+
+
+		database.ref('users/'+uid+'/events').orderByChild("start").on("child_added", function(snapshot) {
+
+				var removeRef = database.ref('users/'+uid+'/events');
+
+				var calMarkUp = {
+					title: snapshot.val().title,
+					startDate: snapshot.val().start
+				};
+
+				var newKey = snapshot.key;
+				
+				eventsArray.push(calMarkUp);
+				refreshCal();
+				$('.cal1').clndr().setEvents(eventsArray);
+				
+				var adjustedStart = moment(snapshot.val().start).format('LL');
+				var adjustedStartTime = moment(snapshot.val().startTime).format('h:mm:ss a');
+
+
+				// adding new event to the page
+				var newUpcoming = "<tr><td>" + snapshot.val().title 
+				+ "</td><td>" + snapshot.val().location 
+				+ "</td><td>" + adjustedStart 
+				+ "</td><td>" + snapshot.val().startTime
+				// + "</td><td>" + newEventButton
+				+ "</td></tr>";
+				$("#upcoming-Tbody").append(newUpcoming);
+
+				// creating the delete button for an event
+				var newEventButton = $('<button/>',{
+					class: 'delete-button',
+					text: 'Remove: '+snapshot.val().title,
+					value: 'remove',
+					click: function removal(){
+						console.log("remove clicked")
+						removeRef.child(newKey).remove().key;
+						location.reload(true);
+					}
 				});
+				// adding new button to the page
+				$("#newButtonGoHere").append(newEventButton);
 
+				numberOfEvents++;
 
+		});
 
-				database.ref('users/'+uid+'/events').orderByChild("start").on("child_added", function(snapshot) {
+	} else {
+		// User is signed out revert to log in page
+		$("#btnLogOut").addClass("hide");
+		$("#main-cont").addClass("hide");
+		$("#log-in-cont").removeClass("hide");
+		$("#exContactTbody").html("");
+	}
 
-						var removeRef = database.ref('users/'+uid+'/events');
+	$(document).keydown( function(e) {
+			// Left arrow
+			if (e.keyCode == 37) {
+					calendars.clndr1.back();
+			}
 
-
-						var calMarkUp = {
-							title: snapshot.val().title,
-							startDate: snapshot.val().start
-						};
-
-						var newKey = snapshot.key;
-						console.log(newKey);
-		
-						
-						eventsArray.push(calMarkUp);
-						// console.log(eventsArray);
-						refreshCal();
-						$('.cal1').clndr().setEvents(eventsArray);
-
-						var adjustedStart = moment(snapshot.val().start).format('LL');
-						var adjustedStartTime = moment(snapshot.val().startTime).format('h:mm:ss a');
-
-// var database = firebase.database();
-// var ref = database.ref();
-
-						var newEventButton = $('<button/>',{
-							class: 'delete-button',
-							text: 'Remove: '+snapshot.val().title,
-							value: 'remove',
-							click: function removal(){
-								console.log("remove clicked")
-								removeRef.child(newKey).remove().key;
-								location.reload(true);
-							}
-						});
-
-						// var newEventButton2 = newEventButton[0].outerHTML;
-						// console.log("button new html: " + newEventButton2);
-
-
-						$("#newButtonGoHere").append(newEventButton);
-
-						var newUpcoming = "<tr><td>" + snapshot.val().title 
-						+ "</td><td>" + snapshot.val().location 
-						+ "</td><td>" + adjustedStart 
-						+ "</td><td>" + snapshot.val().startTime
-						// + "</td><td>" + newEventButton
-						+ "</td></tr>";
-						$("#upcoming-Tbody").append(newUpcoming);
-
-						numberOfEvents++;
-
-						console.log('number of events: ' + numberOfEvents);
-
-				});
-
-		} else {
-			// User is signed out revert to log in page
-			$("#btnLogOut").addClass("hide");
-			$("#main-cont").addClass("hide");
-			$("#log-in-cont").removeClass("hide");
-			$("#exContactTbody").html("");
-		}
-
-		$(document).keydown( function(e) {
-				// Left arrow
-				if (e.keyCode == 37) {
-						calendars.clndr1.back();
-				}
-
-				// Right arrow
-				if (e.keyCode == 39) {
-						calendars.clndr1.forward();
-				}
+			// Right arrow
+			if (e.keyCode == 39) {
+					calendars.clndr1.forward();
+			}
 		});
 	});
 });

@@ -14,22 +14,17 @@
 /*#8192A1 lighter cobalt*/
 /*#A2ADB9 lightest cobalt*/
 
+
+
+/* ------------    Main / Overall CSS   ----------*/
+
 .create-title{
 	margin-top:-5px;
 }
-h1{
-	font-family: 'Lobster', cursive;
-	
-}
-h2{
-	font-family: 'Lobster', cursive;
-	
-}
-h3{
-	font-family: 'Lobster', cursive;
-	
-}
 
+h1, h2, h3 {
+	font-family: 'Lobster', cursive;
+}
 
 body{
 	width:100%;
@@ -41,7 +36,6 @@ body{
 	background-attachment: fixed; 
 	padding: 20px;
 	margin: 10px;
-
 }
 
 .title{
@@ -62,6 +56,78 @@ body{
 	margin-bottom: 40px;
 }
 
+
+
+
+
+/* -------------     Header / Nav Bar CSS --------------- */
+
+.navbar-right{
+	margin: 10px 0 0 0;
+}
+
+#hello-msg {
+	margin: 17px 0 0 0;
+}
+
+
+
+/* --------------    Panel CSS     -----------*/
+.panel{
+	background-color: #ffffff;
+	margin: 30px auto;
+}
+
+.panel-default>.panel-heading {
+	background-color: #b8dabe;
+	border-bottom-width: 0px;
+}
+
+.small-h2 {
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+
+.panel-title{
+	text-align:center;
+	height:20px;
+	background-color: #b8dabe;
+}
+
+
+
+
+/* ------------      Contact CSS ----------*/
+.col-contact-tabs{
+	margin-bottom: 0px;
+	align-items: baseline;
+}
+
+.new-contact-form {
+	padding-left: 20px;
+}
+
+.contact-body {
+	padding: 0px 35px;
+}
+
+
+
+
+/* --------------  Map / Where CSS  -------------*/
+.div-map-inner {
+	margin: 10px;
+	padding: 15px 30px;
+	background-color: #ffffff;
+}
+
+.where-box{
+	margin-left:20px;
+	width:95%;
+}
+
+
+/*---------------   LOG IN PANEL CSS --------------------*/
 .under-title-row {
 	margin-top: -50px;
 }
@@ -91,136 +157,13 @@ body{
 	margin: 15px auto;
 }
 
-.calendar-div{
-	margin-left:20px;
-	width:95%;
 
-}
 
-.new-event-div{
-	margin-left:48px;
-}
-
-/*.places-div{
-	margin-left:20px;
-	height:;
-}*/
-
+/* --------------    Perm Sec CSS  ------------- */
 .div-perm-inner {
 	margin: 10px;
 	padding: 15px 30px;
 	background-color: #ffffff;
-}
-
-.div-map-inner {
-	margin: 10px;
-	padding: 15px 30px;
-	background-color: #ffffff;
-}
-
-.div-results-inner {
-	margin: 10px;
-	padding: 15px 30px;
-	background-color: #ffffff;
-}
-
-/*.div-who-inner {
-	padding: 15px 40px;
-}*/
-
-
-.panel{
-	background-color: #ffffff;
-	margin: 30px auto;
-}
-
-.panel-default>.panel-heading {
-	background-color: #b8dabe;
-	border-bottom-width: 0px;
-}
-
-.panel-title {
-}
-
-.perm-title {
-	margin-bottom: 0px;
-	padding-bottom: 0px;
-}
-
-.small-h2 {
-	margin-top: 10px;
-	margin-bottom: 0px;
-}
-
-.who-body {
-	padding: 0px 35px;
-}
-
-.col-contact-tabs{
-	margin-bottom: 0px;
-	align-items: baseline;
-}
-
-.new-contact-form {
-	padding-left: 20px;
-}
-
-.div-cal-inner {
-	align-items: center;
-	justify-content: center;
-}
-.panel-title{
-	text-align:center;
-	height:20px;
-	background-color: #b8dabe;
-}
-.where-box{
-	margin-left:20px;
-	width:95%;
-}
-
-.find-next-inner {
-	text-align: center;
-	align-items: center;
-	background-color: #b8dabe;
-	border: solid 5px #cec05d;
-	padding: 10px auto;
-}
-
-.find-next{
-	font-family: 'Lobster', cursive;
-	color: #000000;
-	font-size: 50px;
-	text-align:center;
-	margin: 10px auto;
-}
-.log-in-panel {
-	margin: 20px;
-}
-
-.log-in-panel-outter {
-	padding: 60px;
-}
-
-.log-in-panel-heading {
-	width: 100%;
-	margin-left: 0px
-}
-
-.log-in-panel-body {
-	padding: 0px 40px;
-}
-
-.log-in-row {
-	margin: 15px auto;
-}
-
-.log-in-button {
-	margin: 15px auto;
-}
-
-.delete-button {
-	margin: 5px;
 }
 
 .create-row {
@@ -231,6 +174,19 @@ body{
 	margin: 15px auto;
 }
 
+.perm-title {
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+
+
+
+/* -----------       Calendar Css -------------- */
+.div-cal-inner {
+	align-items: center;
+	justify-content: center;
+}
+
 .col-cal {
 	margin-left: auto;
 	margin-right: auto;
@@ -238,11 +194,25 @@ body{
 	text-align: center;
 }
 
-.navbar-right{
-	margin: 10px 0 0 0;
+.calendar-div{
+	margin-left:20px;
+	width:95%;
 }
 
-#hello-msg {
-	margin: 17px 0 0 0;
+
+
+/* --------   Bottom Divs   ------------*/
+.new-event-div{
+	margin-left:48px;
 }
+
+
+.div-results-inner {
+	margin: 10px;
+	padding: 15px 30px;
+	background-color: #ffffff;
+}
+
+
+
 
